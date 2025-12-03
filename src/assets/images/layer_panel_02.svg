@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420" height="72" viewBox="0 0 420 72">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.298" cy="0.5" r="0.702" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#002e58"/>
+      <stop offset="1" stop-color="#001528"/>
+    </radialGradient>
+  </defs>
+  <g id="Group_5734" data-name="Group 5734" transform="translate(-1347.109 -113)">
+    <g id="Rectangle_1430" data-name="Rectangle 1430" transform="translate(1347.109 113)" stroke="#0df" stroke-width="1" fill="url(#radial-gradient)">
+      <rect width="420" height="72" stroke="none"/>
+      <rect x="0.5" y="0.5" width="419" height="71" fill="none"/>
+    </g>
+    <line id="Line_109" data-name="Line 109" y2="60" transform="translate(1662.609 119.192)" fill="none" stroke="#0df" stroke-width="0.5" opacity="0.6"/>
+    <line id="Line_110" data-name="Line 110" y2="60" transform="translate(1557.609 119.192)" fill="none" stroke="#0df" stroke-width="0.5" opacity="0.6"/>
+    <line id="Line_112" data-name="Line 112" y2="60" transform="translate(1452.609 119.192)" fill="none" stroke="#0df" stroke-width="0.5" opacity="0.6"/>
+  </g>
+</svg>

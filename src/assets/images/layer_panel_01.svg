@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="134" height="72" viewBox="0 0 134 72">
+  <defs>
+    <radialGradient id="radial-gradient" cx="0.298" cy="0.5" r="0.702" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#002e58"/>
+      <stop offset="1" stop-color="#001528"/>
+    </radialGradient>
+  </defs>
+  <g id="Group_5733" data-name="Group 5733" transform="translate(-1201.109 -112.692)">
+    <g id="Rectangle_1429" data-name="Rectangle 1429" transform="translate(1201.109 112.692)" stroke="#0df" stroke-width="1" fill="url(#radial-gradient)">
+      <rect width="134" height="72" stroke="none"/>
+      <rect x="0.5" y="0.5" width="133" height="71" fill="none"/>
+    </g>
+    <g id="Group_2232" data-name="Group 2232" transform="translate(1239.713 99.692)">
+      <path id="Path_2149" data-name="Path 2149" d="M.472.215h0Z" transform="translate(28.576 13.785)" fill="#0df" stroke="#0df" stroke-width="1"/>
+      <g id="Group_2223" data-name="Group 2223" transform="translate(-1.603 14)">
+        <g id="Group_2225" data-name="Group 2225">
+          <path id="Path_2150" data-name="Path 2150" d="M55.811,4.215l4.661-4h-60l4.661,4Z" transform="translate(-0.472 -0.215)" fill="#0df" stroke="#0df" stroke-width="0.43"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

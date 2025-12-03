@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_72" data-name="Rectangle 72" width="15.195" height="15.195" transform="translate(0 0)" fill="none" stroke="#06ffee" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_1816" data-name="Group 1816" transform="translate(-1865 -134)">
+    <g id="Rectangle_9" data-name="Rectangle 9" transform="translate(1866 135)" stroke="#009fe3" stroke-width="1" opacity="0.5">
+      <rect width="30" height="30" stroke="none"/>
+      <rect x="0.5" y="0.5" width="29" height="29" fill="none"/>
+    </g>
+    <g id="Group_515" data-name="Group 515" transform="translate(1896.516 134.494) rotate(90)">
+      <g id="Group_536" data-name="Group 536" transform="translate(0.506 0.516)">
+        <path id="Path_686" data-name="Path 686" d="M11.335,30H1.006V1H11.335V.5H.5v30H11.335Z" transform="translate(-0.5 -0.5)" fill="none" stroke="#0df" stroke-width="2"/>
+        <path id="Path_687" data-name="Path 687" d="M75.788.5V1H86.117V30H75.788v.5H86.623V.5Z" transform="translate(-56.623 -0.5)" fill="none" stroke="#0df" stroke-width="2"/>
+      </g>
+    </g>
+    <g id="우측메뉴_지도확대" transform="translate(1873.402 142.402)">
+      <g id="Group_68" data-name="Group 68" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <line id="Line_6" data-name="Line 6" x2="12.195" transform="translate(1.5 7.597)" fill="none" stroke="#06ffee" stroke-linecap="round" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>
