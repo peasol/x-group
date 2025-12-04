@@ -203,3 +203,166 @@ a {
   }
   
 }
+
+
+
+
+/*yj*/
+.btn-switch {
+  display: inline-block;
+  position: relative;
+  width: 44px;
+  height: 24px;
+  input {
+    display: none;
+  }
+  input:checked + label {
+    background: #3f86ed;
+  }
+  input:checked + label:after {
+    transform: translateX(20px);
+  }
+  label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #ccc;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.3s;
+    }
+  }
+  &.disabled label {
+    background: #eee;
+    cursor: not-allowed;
+  }
+  &.disabled input:checked + label {
+    background: #bbb;
+  }
+  &.type3 {
+    width:100px;   
+    height:15px;
+    input {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      cursor: pointer;
+    }
+    label {
+      width: 100%;
+      height: 100%;
+      background: #f1f1f1;
+      border-radius: 12px;
+      transition: transform .15s;
+      &:after {
+        width:30px;
+        height:30px;
+        background:#ccc;
+        border:1px solid #ddd;
+        border-radius:50%;
+        top:-7px;
+        left:0;
+        transition:transform .15s;
+        z-index: 1;
+      }
+    }
+    input:checked + label{
+       background:#79d8a4;
+       &:after {
+        width:30px;
+        height:30px;
+        background:#19aa5a;
+        border:1px solid #147c43;
+        border-radius:50%;
+        top:-7px;
+        left:0;
+        transition:transform .15s;
+        transform:translateX(70px);
+      }
+    }
+  }
+
+  &.type4 {
+    width:100px;   
+    height:50px;
+    &:after, &:before {
+      content: "꺼짐";
+      position: absolute;
+      right:10px;
+      top:13px;
+      font-size: 17px;
+      font-weight:bold;
+      color: #bbb;
+    }
+    &:before {
+      content: "켜짐";
+      left:10px;
+      color: #fff;
+      z-index:1;
+    }
+    input {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      cursor: pointer;
+    }
+    label {
+      width: 100%;
+      height: 100%;
+      background:#ececec;
+      border-radius: 12px;
+      transition: transform .15s;
+      &:after {
+        width:50px;
+        height:50px;
+        background:#bbb;
+        border-radius:12px;
+        top:0;
+        left:0;
+        transition:transform .3s;
+        z-index: 1;
+      }
+    }
+    input:checked + label{
+       background:#1447e6;
+       height:50px;
+       &:after {
+        width:50px;
+        height:50px;
+        background:#bfcce0;
+        border-radius:12px;
+        top:0;
+        left:0;
+        transition:transform .3s;
+        transform: translateX(50px);
+      }
+    }
+  }
+}
+
+
+
+/**/
+
+

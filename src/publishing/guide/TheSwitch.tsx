@@ -6,6 +6,8 @@ function TheSwitch() {
   const [isOn2, setIsOn2] = useState(true);
   const [isOn3, setIsOn3] = useState(false);
   const [isOn4, setIsOn4] = useState(false);
+  const [isOn5, setIsOn5] = useState(true);
+  const [isOn6, setIsOn6] = useState(false);
 
   return (
     <div className="pub-guide">
@@ -26,6 +28,16 @@ function TheSwitch() {
       <h2>className="type2"</h2>
       <div>
         <UiSwitch className="type2" checked={isOn4} onChange={setIsOn4} />
+      </div>
+
+      <h2>className="type3"</h2>
+      <div>
+        <UiSwitch className="type3" checked={isOn5} onChange={setIsOn5} />
+      </div>
+
+      <h2>className="type4"</h2>
+      <div>
+        <UiSwitch className="type4" checked={isOn6} onChange={setIsOn6} />
       </div>
     </div>
   );
