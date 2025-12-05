@@ -18,6 +18,12 @@ function Index() {
         <li>
           <Link to="/publishing/guide/TheChart" target="_blank">차트</Link>
         </li>
+        <li>
+          <Link to="/publishing/guide/TheAccordion" target="_blank">어코디언</Link>
+        </li>
+        <li>
+          <Link to="/publishing/guide/TheModal" target="_blank">모달 팝업</Link>
+        </li>
       </ul>
     </div>
   );

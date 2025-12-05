@@ -1,0 +1,56 @@
+.ui-accordion {
+  width: 100%;
+}
+
+/* 개별 아이템 */
+.acc-item {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: all 0.25s ease;
+
+  /* 헤더 */
+  .acc-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 16px;
+    background: #f7f7f7;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+
+    .acc-title {
+      display: block;
+    }
+
+    .acc-icon {
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+
+  /* body */
+  .acc-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+
+    .acc-inner {
+      padding: 15px;
+      background: #fff;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+  }
+
+  /* open 상태 */
+  &.open {
+    .acc-body {
+      max-height: 300px; // 충분히 큰 값
+    }
+  }
+}
