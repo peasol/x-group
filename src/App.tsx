@@ -8,6 +8,8 @@ import TheTab from './publishing/guide/TheTab';
 import TheChart from './publishing/guide/TheChart';
 import TheAccordion from "./publishing/guide/TheAccordion";
 import TheModal from "./publishing/guide/TheModal";
+import TheHamburgerMenu from "./publishing/guide/TheHamburgerMenu";
+import TheRadio from "./publishing/guide/TheRadio";
 
 
 const router = createBrowserRouter([
@@ -19,6 +21,9 @@ const router = createBrowserRouter([
   { path: "/publishing/guide/TheChart", element: <TheChart /> },
   { path: "/publishing/guide/TheAccordion", element: <TheAccordion /> },
   { path: "/publishing/guide/TheModal", element: <TheModal /> },
+  { path: "/publishing/guide/TheHamburgerMenu", element: <TheHamburgerMenu /> },
+  { path: "/publishing/guide/TheRadio", element: <TheRadio /> },
+
 ]);
 
 export default function App() {
