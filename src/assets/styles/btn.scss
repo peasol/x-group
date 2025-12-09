@@ -25,7 +25,7 @@
   background: #fff;
   border: none;
   outline: none;
-  border-radius: 2px;
+  border-radius: 8px;
   cursor: pointer;
   &:hover { 
     outline: none;
@@ -45,6 +45,11 @@
     height: 50px;
   }
   
+   &.s4{
+    font-size: 12px;
+    min-width: 80px;
+    height: 32px;
+  }
   &.c1 {
     color : #fff;
     background: #4ec0e9;
@@ -59,6 +64,11 @@
     color : #111;
     background: #fff;
     border: 1px solid #cdd2da;
+  }
+   &.c4 {
+    color : #fff;
+    background: #299FF3;
+    border: 1px solid #299FF3;
   }
 
   &.btn-icon {
