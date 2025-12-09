@@ -16,9 +16,6 @@ function TheButton() {
         <UiButton type="button" className="btn s3 c3">
           버튼
         </UiButton>
-        <UiButton type="button" className="btn btn-icon s4 c4" disabled>
-          모르겠습니다
-        </UiButton>
       </div>
 
       <h2>Disabled</h2>
