@@ -363,8 +363,209 @@ a {
   }
 }
 
+/*251205*/
+.yj-st {
+  li:first-child {
+    margin-top: 20px;
+    font-weight: bold;
+    }
+}
 
+/*햄버거 메뉴*/
+.hamburger-menu-container {
+  position: relative;
+  z-index: 10;
+}
 
+.hamburger-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  span {
+    width: 100%;
+    height: 4px;
+    background-color: #111;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  &.open {
+    .bar1 {
+      transform: rotate(-45deg) translate(-8px, 6px);
+    }
+    .bar2 {
+      opacity: 0;
+    }
+    .bar3 {
+      transform: rotate(45deg) translate(-12px, -10px);
+    }
+  }
+}
+
+.menu-content {
+  position: fixed;
+  top: 0;
+  right: -400px; /* 메뉴는 처음에 오른쪽 밖에 위치 (400px로 설정) */
+  width: 400px;
+  height: 100vh; /* 화면 높이를 꽉 채움 */
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease; /* 오른쪽 슬라이딩 효과 */
+  z-index: 9;
+
+  &.open {
+    right: 0; /* 메뉴가 오른쪽에서 왼쪽으로 슬라이드됩니다 */
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 20px 0;
+
+      a {
+        text-decoration: none;
+        color: #111;
+        font-size: 18px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+/*//햄버거 메뉴*/
+
+/*라디오버튼*/
+/* 기본 라디오 버튼 스타일 */
+.radio-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 10px 0;
+
+  input {
+    display: none; /* 기본 라디오 버튼 숨기기 */
+  }
+
+  label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #4ec0e9;
+      background-color: #fff;
+      transition: all 0.2s ease;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #4ec0e9;
+      transition: all 0.2s ease;
+      opacity: 0; /* 선택되지 않았을 때 숨김 */
+    }
+  }
+
+  input:checked + label::after {
+    opacity: 1;
+  }
+
+  input:disabled + label {
+    color: #aaa;
+    cursor: not-allowed;
+  }
+
+  /* 스위치형 라디오 버튼 스타일 */
+  &.switch {
+    display: flex;
+    gap: 15px;
+    input {
+      display: block;
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+
+    label {
+      padding-left: 0;
+      cursor: pointer;
+
+      &::before {
+        content: 'OFF';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 20px;
+        background: #ccc;
+        border-radius: 20px;
+        transition: background 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 12px;
+      }
+
+      &::after {
+        content: 'ON';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 40px;
+        height: 20px;
+        background: #4ec0e9;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 12px;
+        opacity: 0;
+      }
+    }
+
+    input:checked + label::before {
+      background: #4ec0e9;
+    }
+
+    input:checked + label::after {
+      opacity: 1;
+    }
+  }
+  
+  &.disabled input + label::before {
+    background: #ddd;
+  }
+}
+
+/*//라디오버튼*/
 /**/
 
 

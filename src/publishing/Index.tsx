@@ -25,6 +25,15 @@ function Index() {
           <Link to="/publishing/guide/TheModal" target="_blank">모달 팝업</Link>
         </li>
       </ul>
+      <ul className="yj-st">
+        <li>YJ</li>
+        <li>
+          <Link to="/publishing/guide/TheHamburgerMenu" target="_blank">햄버거 메뉴</Link>
+        </li>
+        <li>
+          <Link to="/publishing/guide/TheRadio" target="_blank">라디오 버튼</Link>
+        </li>
+      </ul>
     </div>
   );
 }
