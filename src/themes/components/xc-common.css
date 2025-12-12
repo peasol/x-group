@@ -1,0 +1,78 @@
+@layer component {
+    .xc-focus-visible {
+        @apply focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px];
+        @apply focus-visible:outline-none
+    }
+
+    .xc-aria-invalid {
+        @apply aria-invalid:ring-[var(--E01)]/20 dark:aria-invalid:ring-[var(--E01)]/40 aria-invalid:!border-[var(--E01)];
+    }
+
+    .xc-disabled {
+        @apply cursor-not-allowed pointer-events-none select-none !bg-[#F0F0F0] !shadow-none disabled:border-[#C6C6C6];
+    }
+
+    .xc-input-base {
+        @apply w-full h-[56px] py-[10px] px-[20px] text-[#1D1D1D] !text-[15px] rounded-[8px] border border-[#717171] bg-white placeholder:text-[#999] focus:border-[#246BEB] disabled:bg-[#F0F0F0] transition-[color,box-shadow] md:text-sm focus:ring-0;
+    }
+
+    .xc-input-readonly {
+        @apply focus:!ring-0 !cursor-default text-[#8E8E8E] bg-[#F0F0F0] !shadow-none;
+    }
+
+    .xc-placeholder {
+        @apply text-[#767676] text-[12px];
+    }
+
+    .xc-form-hover:hover {
+        @apply border-primary;
+    }
+
+    .xc-input-error {
+        @apply border-[var(--E01)] hover:border-[var(--E01)];
+    }
+
+    /* .xc-error {
+        @apply text-[var(--E01)] hover:border-[var(--E01)];
+    } */
+
+    .xc-field-label {
+        @apply text-sm font-medium w-fit;
+    }
+
+    .xc-overlay {
+        @apply w-full h-full bg-overlay z-(--z-index-overlay) text-overlay-foreground pointer-events-auto;
+    }
+
+    .xc-list-hover {
+        @apply bg-hover;
+    }
+
+    .xc-list-select {
+        /* @apply border border-primary; */
+        @apply border border-primary outline-offset-0;
+    }
+
+    .xc-list-select-hover {
+        @apply border border-primary outline-offset-0 bg-hover;
+    }
+
+    .xc-popup {
+        @apply bg-background rounded-md shadow-md border outline-hidden border-border;
+    }
+
+    .xc-checkbox {
+      @apply !bg-transparent;
+      .xc-input-checkbox.xc-disabled {
+        @apply !border-[#C6C6C6] !bg-[#DFDFDF];
+      }
+    }
+
+    /* 에디터용 */
+    .xc-input-readonly.quill-readonly {
+      @apply !shadow-none !border-none !bg-transparent !h-[auto];
+      .ql-editor {
+        @apply !p-[0];
+      }
+    }
+}

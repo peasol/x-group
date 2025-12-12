@@ -1,0 +1,67 @@
+@layer components {
+  .xc-button {
+    @apply inline-flex items-center justify-center px-[20px] whitespace-nowrap gap-2 rounded-[8px] font-normal text-[17px] leading-[1] 
+    transition-all shrink-0 outline-none cursor-pointer disabled:!text-[#717171] disabled:!bg-[#D8D8D8] disabled:!border-[#C6C6C6];
+    @apply [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0;
+
+    &.variant-default {
+      @apply text-white bg-[#246BEB] hover:bg-[#1e5ccd];
+    }
+
+    &.variant-destructive {
+      @apply bg-destructive text-destructive-foreground hover:bg-destructive-hover;
+      @apply shadow-xs focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60
+    }
+
+    &.variant-outline {
+      @apply text-[#000B17] border border-[#1D1D1D] bg-white hover:bg-[#f7f7f7];
+    }
+
+    &.variant-secondary {
+      @apply text-[#1D56BC] bg-[#EFF5FF] border border-[#246BEB] hover:bg-[#e1eafa];
+    }
+
+    &.variant-ghost {
+      @apply hover:bg-accent hover:text-accent-foreground;
+      @apply dark:hover:bg-accent/50;
+    }
+
+    &.variant-link {
+      @apply text-primary underline-offset-4 hover:underline
+    }
+
+    &.variant-preset-01 {
+      @apply w-[106px] text-[#1D56BC] bg-[#EFF5FF] border border-[#246BEB];
+    }
+    &.variant-preset-02 {
+      @apply text-white bg-[var(--LE03)] hover:bg-[var(--LE02)];
+    }
+    &.variant-preset-03 {
+      @apply text-[var(--LE03)] px-[27px] min-w-[84px] border border-[var(--LE02)] bg-white hover:bg-[var(--P06)];
+    }
+
+    &.variant-icon {
+    }
+
+    &.size-default {
+      @apply h-[50px];
+    }
+
+    &.size-sm {
+      @apply min-w-[91px] px-[20px] h-[48px] text-[17px];
+    }
+
+    &.size-md {
+      @apply min-w-[106px] px-[20px] h-[56px] text-[19px];
+    }    
+
+    &.size-lg {
+      @apply min-w-[114px] px-[24px] h-[64px] text-[19px];
+    }
+  }
+
+  .btn-wrap {
+    @apply flex flex-wrap mt-[40px] gap-[16px];
+  }  
+
+}

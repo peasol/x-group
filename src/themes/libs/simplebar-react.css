@@ -1,0 +1,15 @@
+@layer base {
+    .simplebar-content-wrapper {
+        /*align-content: center;*/
+        @apply content-center;
+    }
+    .simplebar-scrollbar:before {
+        background: var(--scrollbar-thumb) !important;
+        border-radius: 3px !important;
+        height: var(--xc-scrollbar-thickness) !important; /* 가로 스크롤바 높이 설정 */
+    }
+    .simplebar-hover .simplebar-scrollbar:before {
+        background: var(--scrollbar-thumb-hover) !important;
+        opacity: 1 !important;
+    }
+}

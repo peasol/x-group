@@ -1,0 +1,112 @@
+@layer base {
+    /* Quill 에디터 내 이미지가 inline-block으로 표시되도록 설정 */
+    .ql-editor img {
+        display: inline-block;
+        max-width: 100%;
+    }
+
+    /* 이미지 정렬을 위한 클래스 */
+    .ql-align-center {
+        text-align: center;
+    }
+
+    .ql-align-right {
+        text-align: right;
+    }
+
+    .ql-align-left {
+        text-align: left;
+    }
+
+    .ql-container {
+        @apply focus:!ring-2;
+        /*border-radius: 20px !important;*/
+        border: none !important;
+        background-color: transparent !important;
+        /*height: calc(100% - 46px) !important;*/
+    }
+
+    .quill-edit .ql-container {
+        height: calc(100% - 46px) !important;
+    }
+
+    .quill-readonly .ql-container {
+        height: 100% !important;
+    }
+
+    .ql-editor {
+        border: none !important;
+        background-color: transparent !important;
+    }
+
+    .ql-toolbar {
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        white-space: nowrap;
+        border: none !important;         /* 전체 테두리 제거 */
+        border-bottom: 1px solid #ccc !important; /* 아래쪽 테두리만 */
+        border-radius: 0 !important;     /* 둥근 테두리도 제거 */
+    }
+
+    .hide-toolbar .ql-toolbar {
+        display: none;
+    }
+
+    /* editor 폰트 */
+    /*[class*=ag-theme-], .ql-container { font-family: 'SUIT' !important; }*/
+    /*.ql-editor {*/
+    /*  padding: 0 22px !important;*/
+    /*  h1 { font-size: 40px !important; }*/
+    /*  h2 { font-size: 36px !important; }*/
+    /*  h3 { font-size: 32px !important; }*/
+    /*  h4 { font-size: 28px !important; }*/
+    /*  h5 { font-size: 24px !important; }*/
+    /*  h6 { font-size: 20px !important; }*/
+    /*  p, blockquote { font-size: 16px; }*/
+    /*  code, kbd, samp, pre { font-family: 'SUIT' !important; font-size: 16px; }*/
+    /*  pre.ql-syntax { background-color: #3d3f38; }*/
+    /*}*/
+
+    /* editor-wrap 에디터 커스터마이징 */
+    /*.editor-wrap {*/
+    /*  .ql-toolbar.ql-snow {*/
+    /*    border-top: none;*/
+    /*    border-left: none;*/
+    /*    border-right: none;*/
+    /*  }*/
+
+    /*  .ql-container.ql-snow {*/
+    /*    height: 200px;*/
+    /*    border: none;*/
+    /*    overflow: auto;*/
+
+    /*    .ql-editor {*/
+    /*      padding: 15px 22px !important;*/
+    /*    }*/
+    /*  }*/
+
+    /*  .quill.error + .text-destructive {*/
+    /*    position: absolute;*/
+    /*    bottom: 58px;*/
+    /*    left: 0;*/
+    /*  }*/
+    /*}*/
+
+    /* 에디터 wrapper와 컨테이너의 overflow를 visible로 */
+    .ql-container,
+    .ql-toolbar,
+    .xc-input-base {
+        overflow: visible !important;
+    }
+
+    /* 드롭다운이 항상 위에 보이도록 z-index 보정 */
+    .ql-toolbar .ql-picker {
+        position: relative;
+        z-index: 1000 !important;
+    }
+    .ql-toolbar .ql-picker-options {
+        z-index: 2000 !important;
+        /* 필요시 absolute로 */
+        position: absolute;
+    }
+}

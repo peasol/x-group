@@ -1,0 +1,80 @@
+@layer components {
+  
+  /* footer */
+  .footer { 
+    @apply flex pt-[54px] pb-[32px] min-h-[355px] bg-[#F0F0F0] border-t border-[#d8d8d8];
+    
+    .footer-inner {
+      @apply flex flex-col w-[1280px] mx-[auto];
+
+      .logo-footer {
+        @apply w-[226px] h-[24px] mb-[44px];
+        background: url('@/assets/images/common/logo_footer.svg') no-repeat; 
+      }
+
+      .addr {
+        @apply mb-[10px] px-[2px] text-[17px] text-[#1D1D1D];
+      }
+
+      .nums {
+        @apply flex flex-col gap-[7px] px-[2px];
+        > div {
+          @apply flex items-center gap-[5px];
+          strong {
+            @apply font-bold text-[17px] text-[#1D1D1D];
+          }
+          p {
+            @apply text-[17px] text-[#1D1D1D];
+          }
+        }
+      }
+
+      .foot {
+        @apply flex flex-col mt-[32px] pt-[15px] border-t border-[#D8D8D8];
+
+        ul.link {
+          @apply flex gap-[28px] mb-[10px] px-[2px];
+          li a {
+            @apply flex text-[17px] text-[#1D1D1D] cursor-pointer whitespace-nowrap;
+            &:hover {
+              @apply text-black;
+            }
+          }
+        }
+        .copyright {
+          @apply px-[2px] text-[15px] text-[#555];
+        }
+      }
+    }
+  }
+
+  /* foot-link */
+  .foot-link {
+    @apply h-[55px] border-t border-[#D8D8D8];
+
+    .footer-inner {
+      @apply flex flex-col w-[1280px] mx-[auto];
+      > ul {
+        @apply flex;
+        > li {
+          @apply flex-1 flex;
+          a {
+            @apply flex-1 flex items-center justify-between h-[54px] pl-[24px] pr-[26px] border-l border-[#D8D8D8] 
+            transition-colors duration-200 ease-in-out hover:bg-[#EDF1F5] active:bg-[#CDD7E4];
+          }
+          &:last-child a {
+            @apply border-r border-[#D8D8D8];
+          }
+          span {
+            @apply text-[17px] text-[#1D1D1D];
+          }
+          i {
+            @apply w-[16px] h-[16px];
+            background: url('@/assets/images/common/ic_plus.svg') no-repeat; 
+          }
+        }
+      }
+    }
+  }
+
+}

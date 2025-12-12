@@ -1,0 +1,48 @@
+@layer components {
+  .xc-radio {
+    @apply flex items-center min-w-[20px] h-[20px] cursor-pointer select-none;
+    &.xc-disabled {
+      @apply !bg-transparent;
+    }
+  }
+
+  .xc-radio-label-left-spacing {
+    @apply mr-[8px] mt-[2px] font-normal text-[17px] text-[#1D1D1D];
+  }
+
+  .xc-radio-label-right-spacing {
+    @apply ml-[8px] mt-[2px] font-normal text-[17px] text-[#1D1D1D];
+  }
+
+  .xc-input-radio {
+    @apply appearance-none relative w-[20px] h-[20px] rounded-full border border-[#717171]
+           shrink-0 transition-[color,box-shadow] outline-none cursor-pointer
+           dark:bg-input/30 shadow-xs;
+  }
+  
+  .xc-input-radio.xc-focus-visible {
+    @apply focus-visible:ring-[3px];
+  }
+
+  .xc-input-radio.xc-aria-invalid {
+  }
+
+  .xc-input-radio:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  .xc-input-radio:checked {
+    @apply border-none;
+    background: url('@/assets/images/common/ic_radio_checked.svg') no-repeat;
+  }
+
+  .xc-input-radio:checked:disabled {
+    filter: grayscale(1) brightness(0.6);
+  }
+
+  .radio-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 40px;
+  }
+}

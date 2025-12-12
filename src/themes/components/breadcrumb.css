@@ -1,0 +1,37 @@
+@layer components {
+  .xc-breadcrumb-wrap {
+    @apply mt-[26px] mb-[66px] mx-[5px];
+  }
+
+  .xc-breadcrumb-list {
+    @apply flex items-center gap-[18px];
+  }
+
+  .xc-breadcrumb-item {
+    @apply relative flex items-center;
+  }
+
+  .xc-breadcrumb-link,
+  .xc-breadcrumb-page {
+    @apply inline-flex items-center gap-[5px] text-[15px] text-[#1D1D1D] underline;
+  }
+
+  .xc-breadcrumb-link .ic-home,
+  .xc-breadcrumb-page  .ic-home {
+    @apply w-[16px] h-[16px];
+    background: url('@/assets/images/common/ic_home.svg') no-repeat;
+  }
+
+  .xc-breadcrumb-item + .xc-breadcrumb-item {
+    @apply pl-[11px];
+  }
+  .xc-breadcrumb-item + .xc-breadcrumb-item::before {
+    content: "";
+    @apply absolute top-[5px] left-[-8px] w-[12px] h-[12px];
+    background: url('@/assets/images/common/ic_breadcrumb_ar.svg') no-repeat;
+  }
+
+  .xc-breadcrumb-separator {
+    @apply ml-[8px] text-[#9CA3AF];
+  }
+}

@@ -1,0 +1,26 @@
+@layer components {
+  .xc-input {
+    @apply flex;
+    @apply file:inline-flex file:text-foreground file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium;
+
+    &.xc-input-readonly-white {
+      @apply !bg-white;
+    }
+    
+    &.variant-default {
+    }
+
+    &.variant-login {
+      @apply !h-[50px] !border-white !bg-white !bg-white/80 hover:!border-[var(--P05)] focus:!border-[var(--P03)];
+    }
+
+    &.variant-preset-01 {
+    }
+
+    &.variant-preset-02 {
+    }
+
+    &.variant-preset-03 {
+    }
+  }
+}

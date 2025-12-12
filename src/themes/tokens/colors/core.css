@@ -1,0 +1,125 @@
+@layer base {
+    /* :root {
+        --xc-white: #ffffff;
+        --xc-black: #000000;
+
+        --xc-gray-0: #ffffff;
+        --xc-gray-10: #f9fafb;
+        --xc-gray-20: #f3f4f6;
+        --xc-gray-30: #e5e7eb;
+        --xc-gray-40: #d1d5db;
+        --xc-gray-50: #9ca3af;
+        --xc-gray-60: #6b7280;
+        --xc-gray-70: #4b5563;
+        --xc-gray-80: #374151;
+        --xc-gray-90: #1f2937;
+        --xc-gray-100: #111827;
+    }
+
+    .dark {
+        --xc-gray-0: #0a0a0a;
+        --xc-gray-10: #121212;
+        --xc-gray-20: #1e1e1e;
+        --xc-gray-30: #2a2a2a;
+        --xc-gray-40: #3a3a3a;
+        --xc-gray-50: #4a4a4a;
+        --xc-gray-60: #6b6b6b;
+        --xc-gray-70: #8a8a8a;
+        --xc-gray-80: #b1b1b1;
+        --xc-gray-90: #d4d4d4;
+        --xc-gray-100: #f5f5f5;
+    } */
+}
+
+@theme inline {
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary-hover: var(--primary-hover);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary-hover: var(--secondary-hover);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-destructive-hover: var(--destructive-hover);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-outline: var(--outline);
+    --color-outline-foreground: var(--outline-foreground);
+    --color-outline-hover: var(--outline-hover);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-hover: var(--hover);
+    --color-select: var(--select);
+    --color-select-hover: var(--select-hover);
+
+    --color-overlay: var(--overlay);
+    --color-overlay-foreground: var(--overlay-foreground);
+
+    --color-scrollbar-thumb: var(--scrollbar-thumb);
+    --color-scrollbar-thumb-hover: var(--scrollbar-thumb-hover);
+
+    /* MainLayout */
+    --color-main: var(--main);
+    
+    /* sidebar */
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+
+    --color-sidebar-dropdown: var(--sidebar-dropdown);
+    --color-sidebar-dropdown-item-foreground: var(--sidebar-dropdown-item-foreground);
+    --color-sidebar-dropdown-item-hover: var(--sidebar-dropdown-item-hover);
+
+    --color-sidebar-hover: var(--sidebar-hover);
+    --color-sidebar-hover-foreground: var(--sidebar-hover-foreground);
+
+    --color-sidebar-active: var(--sidebar-active);
+    --color-sidebar-active-foreground: var(--sidebar-active-foreground);
+    --color-sidebar-active-hover: var(--sidebar-active-hover);
+
+    /* table */
+    --color-data-table: var(--data-table);
+    --color-data-table-foreground: var(--data-table-foreground);
+    --color-data-table-border: var(--data-table-border);
+    --color-data-table-accent: var(--data-table-accent);
+    --color-data-table-muted: var(--data-table-muted);
+
+    --color-data-table-header: var(--data-table-header);
+    --color-data-table-footer: var(--data-table-footer);
+
+    --color-data-table-row: var(--data-table-row);
+    --color-data-table-row-odd: var(--data-table-row-odd);
+    --color-data-table-row-even: var(--data-table-row-even);
+
+    --color-data-table-row-hover: var(--data-table-row-hover);
+    --color-data-table-row-odd-hover: var(--data-table-row-odd-hover);
+    --color-data-table-row-even-hover: var(--data-table-row-even-hover);
+
+    --color-data-table-row-select: var(--data-table-row-select);
+    --color-data-table-row-odd-select: var(--data-table-row-odd-select);
+    --color-data-table-row-even-select: var(--data-table-row-even-select);
+
+    --color-data-table-row-select-hover: var(--data-table-row-select-hover);
+    --color-data-table-row-odd-select-hover: var(--data-table-row-odd-select-hover);
+    --color-data-table-row-even-select-hover: var(--data-table-row-even-select-hover);
+  }

@@ -1,0 +1,20 @@
+@layer components {
+  .xc-switch {
+    @apply inline-flex items-center gap-[8px] cursor-pointer;
+  }
+
+  .xc-switch .xc-switch-toggle {
+    @apply relative inline-flex w-[32px] h-[20px] rounded-full transition-all duration-200 outline-none  cursor-pointer;
+    @apply data-[state=unchecked]:bg-[#d1d5db] data-[state=checked]:bg-[#246BEB];
+  }
+
+  .xc-switch-label-left-spacing,
+  .xc-switch-label-right-spacing {
+    @apply font-normal text-[17px] text-[#1D1D1D];
+  }
+
+  .xc-switch .xc-switch-thumb {
+    @apply absolute left-[2px] top-[2px] w-[16px] h-[16px] bg-white rounded-full transition-transform duration-200;
+    @apply data-[state=unchecked]:translate-x-0 data-[state=checked]:translate-x-[12px];
+  }
+}

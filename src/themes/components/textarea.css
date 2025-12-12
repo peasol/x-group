@@ -1,0 +1,5 @@
+@layer components {
+    .xc-textarea {
+      @apply flex resize-none !py-[15px] min-h-[94px];
+    }
+}

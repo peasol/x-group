@@ -1,0 +1,39 @@
+@layer components {
+  .xc-dialog-modal {
+    @apply fixed top-[50%] left-[50%] z-(--z-index-modal) grid translate-x-[-50%] translate-y-[-50%];
+  }
+
+  .xc-dialog-close-button {
+    @apply absolute top-[32px] right-[34px] w-[32px] h-[32px] p-[0] rounded-[3px] hover:bg-[#eee];
+    background: url('@/assets/images/common/ic_close_modal.svg') no-repeat center;
+    background-size: 26px;
+    svg { display: none; }
+  }
+
+  .xc-dialog {
+    @apply min-w-[300px] min-h-[250px] p-[40px] pt-[38px] bg-white rounded-[12px] overflow-hidden focus:outline-none focus:ring-0;
+
+    .xc-dialog-header {
+      @apply flex items-center h-[26px];
+
+      .xc-dialog-title {
+        @apply leading-none !font-bold !text-[25px] text-[#1D1D1D];
+      }
+    }
+
+    .xc-dialog-body {
+      @apply pt-[31px] min-h-[200px] max-h-[calc(100vh_-_330px)] overflow-auto;
+
+      &.xc-dialog-body-dividers {
+        @apply relative before:content-[''] before:absolute before:top-0 before:left-[30px] before:right-[30px] before:h-[2px] before:bg-[#f0f0f0];
+      }
+    }
+
+    .xc-dialog-footer {
+      @apply flex justify-end gap-[12px] mt-[32px];
+      .xc-button {
+        @apply min-w-[91px] h-[48px];
+      }
+    }
+  }
+}
