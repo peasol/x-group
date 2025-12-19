@@ -18,14 +18,14 @@
     }
 
     .right-area {
-      @apply flex items-center gap-[12px];
+      @apply flex items-center gap-[8px];
       .item {
         @apply relative flex items-center gap-[6px];
         .title {
           @apply font-bold text-[#1E2124] whitespace-nowrap;
         }
         & + .item {
-         @apply pl-[15px] after:content-[''] after:absolute after:top-[4px] after:left-[0] after:w-[1px] after:h-[16px] after:bg-[#8A949E];
+         @apply pl-[13px] after:content-[''] after:absolute after:top-[4px] after:left-[0] after:w-[1px] after:h-[16px] after:bg-[#8A949E];
         }
         .btn-select {
           @apply !w-[84px] !h-[30px] !gap-[0] !px-[5px] !font-normal !text-[17px] !border-none;
@@ -71,7 +71,7 @@
   .table-detail {
     table {
       thead tr th {
-        @apply sticky top-[0] h-[40px] !px-[20px] pt-[10px] pb-[8px] !font-bold text-[#1D1D1D] leading-[1.15] text-[15px] !whitespace-normal bg-[#EDF1F5] border border-t-0 border-[#99B0CB];
+        @apply sticky top-[0] h-[40px] !px-[5px] pt-[10px] pb-[8px] !font-bold text-[#1D1D1D] leading-[1.15] text-[15px] !whitespace-normal bg-[#EDF1F5] border border-t-0 border-[#99B0CB];
 
         &:first-child {
           border-left: none;
@@ -87,7 +87,7 @@
         }
       }
       tbody tr td {
-        @apply h-[40px] py-[14px] px-[16px] font-normal text-center text-[#1D1D1D] leading-[1.15] text-[17px] !whitespace-normal border border-[#D8D8D8];
+        @apply h-[40px] py-[11px] px-[16px] font-normal text-center text-[#1D1D1D] leading-[1.15] text-[17px] !whitespace-normal border border-[#D8D8D8];
         
         &:last-child {
           border-right: none;
@@ -104,7 +104,7 @@
   .table-list {
     table {
       thead tr th {
-        @apply h-[40px] !px-[20px] pt-[6px] pb-[4px] !font-bold text-[#1D1D1D] leading-[1] text-[15px] !whitespace-normal bg-[#EDF1F5] border border-t-0 border-[#99B0CB];
+        @apply h-[40px] !px-[5px] pt-[6px] pb-[4px] !font-bold text-[#1D1D1D] leading-[1] text-[15px] !whitespace-normal bg-[#EDF1F5] border border-t-0 border-[#99B0CB];
 
         &:first-child {
           border-left: none;

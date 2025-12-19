@@ -32,7 +32,7 @@
     .xc-dialog-footer {
       @apply flex justify-end gap-[12px] mt-[32px];
       .xc-button {
-        @apply min-w-[91px] h-[48px];
+        @apply h-[48px];
       }
     }
   }

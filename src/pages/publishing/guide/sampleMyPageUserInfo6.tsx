@@ -4,7 +4,6 @@ import LeftMenu from "@/layouts/project/leftmenu/LeftMenu";
 import { MENU_LIST } from "@/layouts/project/header/Nav";
 
 import XcButton from "@/components/xc/ui/XcButton.tsx";
-import SearchSelect from "@/components/ui/searchSelect.tsx";
 import {
   Select,
   SelectTrigger,
@@ -15,10 +14,10 @@ import {
 import XcInput from "@/components/xc/ui/XcInput";
 import ModalWithdrawalGuide from "@/components/its/ModalWithdrawalGuide";
 
-const sampleMyPageUserInfo2 = () => {
+const sampleMyPageUserInfo6 = () => {
   const menu = MENU_LIST.find((m) => m.label === "나의 평가현황");
 
-  const [openWithdrawal, setOpenWithdrawal] = useState(false);
+  const [openWithdrawal, setOpenWithdrawal] = useState(false);  
 
   return (
     <>
@@ -54,7 +53,7 @@ const sampleMyPageUserInfo2 = () => {
             <div className="application-form detail-page">
               <div className="app-box opened">
                 <div className="top">
-                  <span className="title">사용자 정보</span>
+                  <span className="title">사용자 정보 수정</span>
                 </div>
                 <div className="cont">
                   
@@ -64,30 +63,47 @@ const sampleMyPageUserInfo2 = () => {
                     <div className="form-row">
                       <div className="cols">
                         <label htmlFor="orgPart">사용자 (소속) 구분</label>
-                        <XcInput id="orgPart" value="개인" disabled />
+                        <XcInput id="orgPart" value="법인" disabled />
                       </div>
                       <div className="cols">
                         <label htmlFor="orgName">소속기관명</label>
-                        <SearchSelect
-                          placeholder="관리기관명을 입력해주세요."
-                          options={[
-                            "한국도로공사 천안지점",
-                            "한국도로공사 서울지점",
-                            "한국도로공사 부산지점"
-                          ]}
-                          value="한국도로공사 천안지점"
-                          disabled
-                        />
+                        <XcInput id="orgName" value="법인명" disabled />
                       </div>
                     </div>
 
                     <div className="form-row">
                       <div className="cols">
-                        <label htmlFor="userName">사용자 명</label>
+                        <label htmlFor="userName">대표자명</label>
                         <XcInput id="userName" value="김도로" disabled />
                       </div>
+
+                      {/* 법인번호 */}
                       <div className="cols">
-                        <label htmlFor="emailLocal">이메일</label>
+                        <label>법인번호</label>
+                        <div className="corpnum-wrap">
+                          <XcInput onlyNumber maxLength={6} disabled />
+                          <span className="bar">-</span>
+                          <XcInput onlyNumber maxLength={7} disabled />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="form-row">
+                      {/* 사업자등록번호 */}
+                      <div className="cols">
+                        <label>사업자등록번호</label>
+                        <div className="biznum-wrap">
+                          <XcInput onlyNumber maxLength={3} disabled />
+                          <span className="bar">-</span>
+                          <XcInput onlyNumber maxLength={2} disabled />
+                          <span className="bar">-</span>
+                          <XcInput onlyNumber maxLength={5} disabled />
+                        </div>
+                      </div>
+
+                      {/* 이메일 */}
+                      <div className="cols">
+                        <label>이메일</label>
                         <div className="email">
                           <XcInput id="emailLocal" value="aaa123" disabled />
                           <span>@</span>
@@ -112,11 +128,10 @@ const sampleMyPageUserInfo2 = () => {
                         <XcInput id="phone" value="010-1234-5678" disabled />
                       </div>
                       <div className="cols">
-                        <label htmlFor="userID">사용자 ID</label>
+                        <label htmlFor="userID">ID</label>
                         <XcInput id="userID" value="gogo123" disabled />
                       </div>
                     </div>
-
                   </div>
 
                   {/* 첨부파일 */}
@@ -128,15 +143,6 @@ const sampleMyPageUserInfo2 = () => {
                       </li>
                     </ul>
                   </div>
-                  <div className="attach-files">
-                    <div className="title"><span className="text-[#ec4651]">*</span> 첨부파일 - 재직증명서</div>
-                    <ul>
-                      <li>
-                        <p>재직증명서_사본 [pdf, 1.2MB]</p>
-                      </li>
-                    </ul>
-                  </div>
-
                 </div>
               </div>
             </div>
@@ -158,9 +164,9 @@ const sampleMyPageUserInfo2 = () => {
       <ModalWithdrawalGuide
         open={openWithdrawal}
         onOpenChange={setOpenWithdrawal}
-      />      
+      />
     </>
   );
 };
 
-export default sampleMyPageUserInfo2;
+export default sampleMyPageUserInfo6;

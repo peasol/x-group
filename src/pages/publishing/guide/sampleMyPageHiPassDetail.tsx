@@ -2,7 +2,6 @@ import { useState } from "react";
 import XcBreadcrumb from "@/components/xc/ui/XcBreadcrumb";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table.tsx";
 import XcButton from "@/components/xc/ui/XcButton.tsx";
-import XcRadio from "@/components/xc/ui/XcRadio.tsx";
 import {
   Select,
   SelectTrigger,
@@ -147,11 +146,21 @@ const sampleMyPageHiPassDetail = () => {
                     <div className="form-row">
                       <div className="cols">
                         <label htmlFor="orgName">기관명(업체명)</label>
-                        <XcInput id="orgName" placeholder="기관명(업체명)을 입력해 주세요." disabled />
+                        <div className="input-btn-group">
+                          <XcInput id="orgName" disabled />
+                          <XcButton variant="secondary" className="min-w-[140px]" disabled>기관검색</XcButton>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="form-row">
+                      <div className="cols">
+                        <label htmlFor="corpNum">법인번호</label>
+                        <XcInput id="corpNum" onlyNumber disabled />
                       </div>
                       <div className="cols">
                         <label htmlFor="bizNum">사업자등록번호</label>
-                        <XcInput id="bizNum" placeholder="" disabled />
+                        <XcInput id="bizNum" onlyNumber disabled />
                       </div>
                     </div>
 
@@ -159,8 +168,8 @@ const sampleMyPageHiPassDetail = () => {
                       <div className="cols">
                         <label htmlFor="postCode">우편번호</label>
                         <div className="zip">
-                          <XcInput id="postCode" disabled />
-                          <XcButton variant="secondary" disabled>우편번호 찾기</XcButton>
+                          <XcInput id="postCode" onlyNumber disabled />
+                          <XcButton variant="secondary" className="min-w-[140px]" disabled>우편번호 찾기</XcButton>
                         </div>
                       </div>
                       <div className="cols">
@@ -168,13 +177,13 @@ const sampleMyPageHiPassDetail = () => {
                           <div>
                             <label htmlFor="addr1">주소1</label>
                             <div>
-                              <XcInput id="addr1" placeholder="주소" disabled />
+                              <XcInput id="addr1" disabled />
                             </div>
                           </div>
                           <div>
                             <label htmlFor="addr2">주소2</label>
                             <div>
-                              <XcInput id="addr2" placeholder="상세주소" disabled />
+                              <XcInput id="addr2" disabled />
                             </div>
                           </div>
                         </div>
@@ -183,46 +192,55 @@ const sampleMyPageHiPassDetail = () => {
 
                     <div className="form-row">
                       <div className="cols">
-                        <label htmlFor="manager">대표자</label>
+                        <label htmlFor="representative">대표자</label>
+                        <XcInput id="representative" disabled />
+                      </div>
+                      <div className="cols">
+                        <label htmlFor="fax">팩스번호</label>
+                        <XcInput id="fax" onlyNumber disabled />
+                      </div>
+                    </div>
+
+                    <div className="form-row">
+                      <div className="cols">
+                        <label htmlFor="manager">담당자</label>
                         <XcInput id="manager" disabled />
                       </div>
                       <div className="cols">
-                        <label htmlFor="dept">성명(명칭)</label>
-                        <XcInput id="dept" disabled />
+                        <label htmlFor="department">소속 부서명(관리부서)</label>
+                        <XcInput id="department" disabled />
                       </div>
                     </div>
 
                     <div className="form-row">
                       <div className="cols">
                         <label htmlFor="phone">전화번호</label>
-                        <XcInput id="phone" disabled />
+                        <XcInput id="phone" onlyNumber disabled />
                       </div>
                       <div className="cols">
-                        <label htmlFor="fax">팩스</label>
-                        <XcInput id="fax" disabled />
+                        <label htmlFor="emailLocal">이메일</label>
+                        <div className="email">
+                          <XcInput id="emailLocal" disabled />
+                          <span>@</span>
+                          <Select disabled>
+                            <SelectTrigger id="emailDomain">
+                              <SelectValue placeholder="선택" />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="gmail.com">gmail.com</SelectItem>
+                              <SelectItem value="naver.com">naver.com</SelectItem>
+                              <SelectItem value="daum.net">daum.net</SelectItem>
+                              <SelectItem value="custom">직접입력</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
                       </div>
                     </div>
 
                     <div className="form-row">
                       <div className="cols">
-                        <label htmlFor="emailLocal">이메일</label>
-                        <div className="w-[calc(50%_-_10px)]">
-                          <div className="email">
-                            <XcInput id="emailLocal" disabled />
-                            <span>@</span>
-                            <Select disabled>
-                              <SelectTrigger id="emailDomain">
-                                <SelectValue placeholder="선택" />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="gmail.com">gmail.com</SelectItem>
-                                <SelectItem value="naver.com">naver.com</SelectItem>
-                                <SelectItem value="daum.net">daum.net</SelectItem>
-                                <SelectItem value="custom">직접입력</SelectItem>
-                              </SelectContent>
-                            </Select>
-                          </div>
-                        </div>
+                        <label htmlFor="applicant">신청인</label>
+                        <XcInput id="applicant" disabled />
                       </div>
                     </div>
                   </div>
@@ -268,65 +286,35 @@ const sampleMyPageHiPassDetail = () => {
               {/* add-block */}
               <div className="add-block">
 
-                {/* 신청대상장비 정보등록 #1 */}
-                <div className={`app-box ${boxOpened.equip1 ? "opened" : ""}`}>
+                <div className="app-box opened">
+                  {/* top detail 영역 : 불필요시 삭제 */}
                   <div className="top detail">
                     <div className="top-sub">
                       <span className="title-sub">접수번호 - 25-10-10_IR-202</span>
-                      <div>
-                        <button
-                          className="btn-ar"
-                          aria-label="접고펼치기"
-                          onClick={() => toggleBox("equip1")}
-                        />
-                      </div>
                     </div>
-                    <div className="top-sub-status">
+                    <div className="top-sub-status mb-[0]">
                       <dl>
                         <dt>진행현황</dt>  
                         <dd>기술시험 완료</dd>
                       </dl>
                     </div>
                   </div>
-                  <div className="cont">
+
+                  <div className="cont pt-[36px]">
 
                     <div className="form-wrap">
-                      {/* 샘플 - cols 개수에 따라 자동정렬됨 */}
+                      <div className="title">단말기 필수정보</div>
+
+                      {/* 적합평가 구분 / 시험종류 / OBU 모델명 */}
                       <div className="form-row">
                         <div className="cols">
-                          <label htmlFor="sample1">제목샘플</label>
-                          <Select disabled>
-                            <SelectTrigger id="sample1">
-                              <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="옵션">옵션</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-
-                        <div className="cols">
-                          <label htmlFor="sample2">제목샘플</label>
-                          <Select disabled>
-                            <SelectTrigger id="sample2">
-                              <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="옵션">옵션</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                      </div>
-
-                      {/* 적합평가 대상 / 시험종류 / OBU 모델명 */}
-                      <div className="form-row">
-                        <div className="cols">
-                          <label htmlFor="evalTarget">적합평가 대상</label>
+                          <label htmlFor="evalTarget">적합평가 구분</label>
                           <Select disabled>
                             <SelectTrigger id="evalTarget">
                               <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
+                              <SelectItem value="일반단말기">일반단말기</SelectItem>
                               <SelectItem value="감면단말기">감면단말기</SelectItem>
                             </SelectContent>
                           </Select>
@@ -350,54 +338,35 @@ const sampleMyPageHiPassDetail = () => {
                         </div>
                       </div>
 
-                      {/* BIU 모델명 / 제조사/제조국 / 통신방식 */}
+                      {/* 제조사 / 제조국 / 단말기 통신방식 */}
                       <div className="form-row">
                         <div className="cols">
-                          <label htmlFor="biuModel">BIU 모델명</label>
-                          <Select disabled>
-                            <SelectTrigger id="biuModel">
-                              <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="BIU 모델명">BIU 모델명</SelectItem>
-                            </SelectContent>
-                          </Select>
+                          <label htmlFor="maker">제조사</label>
+                          <XcInput id="maker" disabled />
                         </div>
 
                         <div className="cols">
-                          <label htmlFor="maker">제조사/제조국</label>
-                          <XcInput id="maker" value="유티정보(주)" disabled />
+                          <label htmlFor="country">제조국</label>
+                          <XcInput id="country" disabled />
                         </div>
 
                         <div className="cols">
-                          <label htmlFor="communication">통신방식</label>
+                          <label htmlFor="communication">단말기 통신방식</label>
                           <Select disabled>
                             <SelectTrigger id="communication">
                               <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="유선">유선</SelectItem>
+                              <SelectItem value="적외선(IR)">적외선(IR)</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
                       </div>
 
-                      {/* PC 연결 / 사용자 인터페이스 / 인식종류 */}
+                      {/* 사용자 인터페이스 / 단말기 형태 / 단말기 형태 구분 */}
                       <div className="form-row">
                         <div className="cols">
-                          <label htmlFor="pcConnect">PC연결</label>
-                          <Select disabled>
-                            <SelectTrigger id="pcConnect">
-                              <SelectValue />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="BIU">BIU</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-
-                        <div className="cols">
-                          <label htmlFor="uiType">사용자인터페이스</label>
+                          <label htmlFor="uiType">사용자 인터페이스</label>
                           <Select disabled>
                             <SelectTrigger id="uiType">
                               <SelectValue />
@@ -409,52 +378,31 @@ const sampleMyPageHiPassDetail = () => {
                         </div>
 
                         <div className="cols">
-                          <label htmlFor="recognition">인식종류</label>
+                          <label htmlFor="deviceType">단말기 형태</label>
                           <Select disabled>
-                            <SelectTrigger id="recognition">
+                            <SelectTrigger id="deviceType">
                               <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="지문인식">지문인식</SelectItem>
+                              <SelectItem value="차량출고 전 장착형">차량출고 전 장착형</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+
+                        <div className="cols">
+                          <label htmlFor="deviceType2">단말기 형태 구분</label>
+                          <Select disabled>
+                            <SelectTrigger id="deviceType2">
+                              <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="룸미러">룸미러</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
                       </div>
 
-                      {/* 부가기능 / 단말기형태(+라디오 4개) */}
-                      <div className="form-row">
-                        <div className="cols flex-none w-[388px]">
-                          <label htmlFor="extraFunction">부가기능</label>
-                          <XcInput id="extraFunction" placeholder="" disabled />
-                        </div>
-
-                        <div className="cols">
-                          <label htmlFor="deviceType">단말기형태</label>
-                          <div className="flex gap-[20px]">
-                            <Select disabled>
-                              <SelectTrigger id="deviceType" className="w-[388px]">
-                                <SelectValue />
-                              </SelectTrigger>
-                              <SelectContent>
-                                <SelectItem value="차량내 장착형">차량내 장착형</SelectItem>
-                              </SelectContent>
-                            </Select>
-
-                            <div className="flex items-center gap-[10px] whitespace-nowrap">
-                              <XcRadio 
-                                name="deviceTypeDetail" 
-                                value="룸미러" 
-                                label="룸미러"
-                                checked
-                                disabled
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-
-                      {/* 전원공급 방식 / 시료수량 / 선불/후불 */}
+                      {/* 전원공급 방식 / 적용가능 전자카드(전자카드 샘플구분) / BIU 모델명 */}
                       <div className="form-row">
                         <div className="cols">
                           <label htmlFor="powerSupply">전원공급 방식</label>
@@ -469,31 +417,118 @@ const sampleMyPageHiPassDetail = () => {
                         </div>
 
                         <div className="cols">
-                          <label htmlFor="sampleCount">시료수량</label>
+                          <label htmlFor="ElecCard">적용가능 전자카드(전자카드 샘플구분)</label>
                           <Select disabled>
-                            <SelectTrigger id="sampleCount">
+                            <SelectTrigger id="ElecCard">
                               <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="4">4</SelectItem>
+                              <SelectItem value="선불+후불">선불+후불</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
 
                         <div className="cols">
-                          <label htmlFor="paymentType">선불/후불</label>
+                          <label htmlFor="biuModel">BIU 모델명</label>
+                          <XcInput id="biuModel" disabled />
+                        </div>
+                      </div>
+
+                      {/* 생체 인식 장치 통신 방식 코드 / 생체 인식 장치 인식 유형 코드 / 생체 인식 장치 최대 등록수 */}
+                      <div className="form-row">
+                        <div className="cols">
+                          <label htmlFor="bodyRecognition1">생체 인식 장치 통신 방식 코드</label>
                           <Select disabled>
-                            <SelectTrigger id="paymentType">
+                            <SelectTrigger id="bodyRecognition1">
                               <SelectValue />
                             </SelectTrigger>
                             <SelectContent>
-                              <SelectItem value="선불/후불">선불/후불</SelectItem>
+                              <SelectItem value="유선+무선">유선+무선</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+
+                        <div className="cols">
+                          <label htmlFor="bodyRecognition2">생체 인식 장치 인식 유형 코드</label>
+                          <Select disabled>
+                            <SelectTrigger id="bodyRecognition2">
+                              <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="지문인식">지문인식</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+
+                        <div className="cols">
+                          <label htmlFor="bodyRecognition3">생체 인식 장치 최대 등록수</label>
+                          <XcInput id="bodyRecognition3" onlyNumber disabled />
+                        </div>
+                      </div>
+
+                      {/* 생체 인식 장치 제조사명 / PC 연결 장치 코드 / 안내 장치 코드 */}
+                      <div className="form-row">
+                        <div className="cols">
+                          <label htmlFor="bodyRecognition4">생체 인식 장치 제조사명</label>
+                          <XcInput id="bodyRecognition4" disabled />
+                        </div>
+
+                        <div className="cols">
+                          <label htmlFor="deviceCode1">PC 연결 장치 코드</label>
+                          <Select disabled>
+                            <SelectTrigger id="deviceCode1">
+                              <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="BIU">BIU</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+
+                        <div className="cols">
+                          <label htmlFor="deviceCode2">안내 장치 코드</label>
+                          <Select disabled>
+                            <SelectTrigger id="deviceCode2">
+                              <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="BIU">BIU</SelectItem>
                             </SelectContent>
                           </Select>
                         </div>
                       </div>
+
+                      {/* 기타 내용 */}
+                      <div className="form-row">
+                        <div className="cols">
+                          <label htmlFor="contEtc">기타 내용</label>
+                          <XcInput id="contEtc" disabled />
+                        </div>
+                      </div>
+
+                      {/* 부가기능 */}
+                      <div className="form-row">
+                        <div className="cols">
+                          <label htmlFor="addFeature">부가기능</label>
+                          <XcInput id="addFeature" disabled />
+                        </div>
+                      </div>
+
+                      {/* 소프트웨어 특성 */}
+                      <div className="form-row">
+                        <div className="cols">
+                          <label htmlFor="softwareCha">소프트웨어 특성</label>
+                          <XcInput id="softwareCha" disabled />
+                        </div>
+                      </div>
+
                     </div>
 
+                    {/* 
+                      =============== 
+                      여기서부터 2단계
+                      =============== 
+                    */}
                     <div className="form-wrap gap-[0]">
                       <div className="title">제품규격</div>
                       <div className="table-list">
@@ -507,42 +542,146 @@ const sampleMyPageHiPassDetail = () => {
                           <TableHeader>
                             <TableRow>
                               <TableHead>항목</TableHead>
-                              <TableHead>제품일련번호</TableHead>
+                              <TableHead>주요 구성품</TableHead>
                               <TableHead>비고</TableHead>
                             </TableRow>
                           </TableHeader>
                           <TableBody>
                             <TableRow>
                               <TableCell>
-                                <XcInput disabled />
+                                <XcInput placeholder="placeholder" disabled />
                               </TableCell>
                               <TableCell>
-                                <XcInput disabled />
+                                <XcInput placeholder="placeholder" disabled />
                               </TableCell>
                               <TableCell>
-                                <XcInput disabled />
-                              </TableCell>
-                            </TableRow>
-                            <TableRow>
-                              <TableCell>
-                                <XcInput disabled />
-                              </TableCell>
-                              <TableCell>
-                                <XcInput disabled />
-                              </TableCell>
-                              <TableCell>
-                                <XcInput disabled />
+                                <XcInput placeholder="placeholder" disabled />
                               </TableCell>
                             </TableRow>
                             <TableRow>
                               <TableCell>
-                                <XcInput disabled />
+                                <XcInput placeholder="placeholder" disabled />
                               </TableCell>
                               <TableCell>
-                                <XcInput disabled />
+                                <XcInput placeholder="placeholder" disabled />
                               </TableCell>
                               <TableCell>
-                                <XcInput disabled />
+                                <XcInput placeholder="placeholder" disabled />
+                              </TableCell>
+                            </TableRow>
+                            <TableRow>
+                              <TableCell>
+                                <XcInput placeholder="placeholder" disabled />
+                              </TableCell>
+                              <TableCell>
+                                <XcInput placeholder="placeholder" disabled />
+                              </TableCell>
+                              <TableCell>
+                                <XcInput placeholder="placeholder" disabled />
+                              </TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </Table>
+                      </div>
+                    </div>
+
+                    <div className="form-wrap gap-[0]">
+                      <div className="title">단말기 시료 목록</div>
+                      <div className="table-list">
+                        <Table>
+                          <caption>단말기 시료 목록 표</caption>
+                          <colgroup>
+                            <col style={{ width: "20%" }} />
+                            <col />
+                            <col style={{ width: "20%" }} />
+                            <col style={{ width: "10%" }} />
+                          </colgroup>
+                          <TableHeader>
+                            <TableRow>
+                              <TableHead>제조번호</TableHead>
+                              <TableHead>발행번호</TableHead>
+                              <TableHead>차종</TableHead>
+                              <TableHead>사진등록</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            <TableRow>
+                              <TableCell>
+                                <XcInput placeholder="placeholder" disabled />
+                              </TableCell>
+                              <TableCell>
+                                <XcInput placeholder="placeholder" disabled />
+                              </TableCell>
+                              <TableCell>
+                                <Select disabled>
+                                  <SelectTrigger>
+                                    <SelectValue />
+                                  </SelectTrigger>
+                                  <SelectContent>
+                                    <SelectItem value="1종">1종</SelectItem>
+                                  </SelectContent>
+                                </Select>
+                              </TableCell>
+                              <TableCell>
+                                <XcButton className="w-[70px]" variant="secondary" disabled>찾기</XcButton>
+                              </TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </Table>
+                      </div>
+                    </div>
+
+                    <div className="form-wrap gap-[0]">
+                      <div className="title">전자카드 정보입력</div>
+                      <div className="table-list">
+                        <Table>
+                          <caption>전자카드 정보입력 표</caption>
+                          <colgroup>
+                            <col />
+                            <col style={{ width: "18%" }} />
+                            <col style={{ width: "18%" }} />
+                            <col style={{ width: "22%" }} />
+                            <col style={{ width: "10%" }} />
+                          </colgroup>
+                          <TableHeader>
+                            <TableRow>
+                              <TableHead>전자카드번호</TableHead>
+                              <TableHead>비고</TableHead>
+                              <TableHead>구분</TableHead>
+                              <TableHead>사용구분</TableHead>
+                              <TableHead>사진등록</TableHead>
+                            </TableRow>
+                          </TableHeader>
+                          <TableBody>
+                            <TableRow>
+                              <TableCell>
+                                <XcInput placeholder="placeholder" disabled />
+                              </TableCell>
+                              <TableCell>
+                                <XcInput placeholder="placeholder" disabled />
+                              </TableCell>
+                              <TableCell>
+                                <Select disabled>
+                                  <SelectTrigger>
+                                    <SelectValue />
+                                  </SelectTrigger>
+                                  <SelectContent>
+                                    <SelectItem value="일반선불">일반선불</SelectItem>
+                                  </SelectContent>
+                                </Select>
+                              </TableCell>
+                              <TableCell>
+                                <Select disabled>
+                                  <SelectTrigger>
+                                    <SelectValue />
+                                  </SelectTrigger>
+                                  <SelectContent>
+                                    <SelectItem value="기능/성능(Test)">기능/성능(Test)</SelectItem>
+                                  </SelectContent>
+                                </Select>
+                              </TableCell>
+                              <TableCell>
+                                <XcButton className="w-[70px]" variant="secondary" disabled>찾기</XcButton>
                               </TableCell>
                             </TableRow>
                           </TableBody>

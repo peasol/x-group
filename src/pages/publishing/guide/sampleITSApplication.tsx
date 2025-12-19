@@ -402,11 +402,11 @@ const sampleITSApplication = () => {
                             </div>
                           </div>
 
-                          {/* 전후면구분 / 도로종류 / 터널명 */}
+                          {/* 전후면구분 / 도로종류 / 터널여부 */}
                           <div className="form-row">
                             <div className="cols">
                               <label htmlFor="side">전후면구분</label>
-                              <Select disabled>
+                              <Select>
                                 <SelectTrigger id="side">
                                   <SelectValue />
                                 </SelectTrigger>
@@ -429,16 +429,28 @@ const sampleITSApplication = () => {
                             </div>
 
                             <div className="cols">
-                              <label htmlFor="tunnelName">터널명</label>
-                              <XcInput id="tunnelName" value="-" disabled />
+                              <label htmlFor="tunnelWhether">터널여부</label>
+                              <Select>
+                                <SelectTrigger id="tunnelWhether">
+                                  <SelectValue />
+                                </SelectTrigger>
+                                <SelectContent>
+                                  <SelectItem value="Y">Y</SelectItem>
+                                </SelectContent>
+                              </Select>
                             </div>
                           </div>
 
-                          {/* 터널위치 / 관리기관명 / 장비ID */}
+                          {/* 터널명 / 터널위치 / 관리기관명 */}
                           <div className="form-row">
                             <div className="cols">
+                              <label htmlFor="tunnelName">터널명</label>
+                              <XcInput id="tunnelName" value="-" />
+                            </div>
+
+                            <div className="cols">
                               <label htmlFor="tunnelPosition">터널위치</label>
-                              <Select disabled>
+                              <Select>
                                 <SelectTrigger id="deviceId">
                                   <SelectValue />
                                 </SelectTrigger>
@@ -459,18 +471,18 @@ const sampleITSApplication = () => {
                                 ]}
                               />
                             </div>
+                          </div>
 
-                            <div className="cols">
+                          {/* 장비ID / RSE ID / 설치일자 */}
+                          <div className="form-row">
+                             <div className="cols">
                               <label htmlFor="deviceId">장비ID</label>
                               <XcInput id="deviceId" value="V-0500-0417S-I-8-H" />
                             </div>
-                          </div>
-
-                          {/* RSE ID / 설치일자 / 제조사 */}
-                          <div className="form-row">
+                            
                             <div className="cols">
                               <label htmlFor="rseId">RSE ID</label>
-                              <XcInput id="rseId" value="" disabled />
+                              <XcInput id="rseId" value="" />
                             </div>
 
                             <div className="cols">
@@ -485,15 +497,15 @@ const sampleITSApplication = () => {
                                 />
                               </div>
                             </div>
+                          </div>
 
-                            <div className="cols">
+                          {/* 제조사 / 모델명 / 차로수 */}
+                          <div className="form-row">
+                             <div className="cols">
                               <label htmlFor="manufacturer">제조사</label>
                               <XcInput id="manufacturer" value="유티정보" />
                             </div>
-                          </div>
 
-                          {/* 모델명 / 차로수 / 노선명 */}
-                          <div className="form-row">
                             <div className="cols">
                               <label htmlFor="modelName">모델명</label>
                               <XcInput id="modelName" value="VDS5000" />
@@ -503,15 +515,15 @@ const sampleITSApplication = () => {
                               <label htmlFor="laneCount">차로수</label>
                               <XcInput id="laneCount" value="4" />
                             </div>
+                          </div>
 
-                            <div className="cols">
+                          {/* 노선명 / 설치위치 */}
+                          <div className="form-row">
+                            <div className="cols cols-one-third">
                               <label htmlFor="routeName">노선명</label>
                               <XcInput id="routeName" value="서해안고속도로" />
                             </div>
-                          </div>
 
-                          {/* 설치위치 */}
-                          <div className="form-row">
                             <div className="cols">
                               <label htmlFor="locationRoad">설치위치(도로명주소)</label>
                               <XcInput id="locationRoad" value="서하남대로 127" />
@@ -539,39 +551,48 @@ const sampleITSApplication = () => {
 
                             <div className="cols">
                               <label htmlFor="installHeight">설치높이(m)</label>
-                              <XcInput id="installHeight" value="-" disabled />
+                              <XcInput id="installHeight" value="-" />
                             </div>
                           </div>
 
-                          {/* 음영영역 / 평가방향 / 평가시간 */}
+                          {/* 음영영역 / 평가영역 / 평가방향 / 평가시간 */}
                           <div className="form-row">
                             <div className="cols">
                               <label htmlFor="shadowArea">음영영역(m)</label>
-                              <XcInput id="shadowArea" value="-" disabled />
+                              <XcInput id="shadowArea" value="-" />
                             </div>
 
                             <div className="cols">
-                              <label htmlFor="evalDir">평가방향</label>
-                              <Select disabled>
-                                <SelectTrigger id="evalDir">
-                                  <SelectValue placeholder="-" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                  <SelectItem value="-">-</SelectItem>
-                                </SelectContent>
-                              </Select>
+                              <label htmlFor="evalArea">평가영역(m)</label>
+                              <XcInput id="evalArea" value="-" />
                             </div>
 
-                            <div className="cols">
-                              <label htmlFor="evalTime">평가시간</label>
-                              <Select>
-                                <SelectTrigger id="evalTime">
-                                  <SelectValue placeholder="주간" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                  <SelectItem value="주간">주간</SelectItem>
-                                </SelectContent>
-                              </Select>
+                            <div className="cols flex-row gap-[10px]">
+
+                              <div className="flex-1">
+                                <label htmlFor="evalDir">평가방향</label>
+                                <Select>
+                                  <SelectTrigger id="evalDir">
+                                    <SelectValue placeholder="-" />
+                                  </SelectTrigger>
+                                  <SelectContent>
+                                    <SelectItem value="-">-</SelectItem>
+                                  </SelectContent>
+                                </Select>
+                              </div>
+                              
+                              <div className="flex-1">
+                                <label htmlFor="evalTime">평가시간</label>
+                                <Select>
+                                  <SelectTrigger id="evalTime">
+                                    <SelectValue placeholder="주간" />
+                                  </SelectTrigger>
+                                  <SelectContent>
+                                    <SelectItem value="주간">주간</SelectItem>
+                                  </SelectContent>
+                                </Select>
+                              </div>
+
                             </div>
                           </div>
 

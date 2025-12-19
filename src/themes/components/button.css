@@ -34,7 +34,7 @@
       @apply w-[106px] text-[#1D56BC] bg-[#EFF5FF] border border-[#246BEB];
     }
     &.variant-preset-02 {
-      @apply text-white bg-[var(--LE03)] hover:bg-[var(--LE02)];
+      @apply text-white bg-[#8E8E8E] hover:bg-[#797979];
     }
     &.variant-preset-03 {
       @apply text-[var(--LE03)] px-[27px] min-w-[84px] border border-[var(--LE02)] bg-white hover:bg-[var(--P06)];
@@ -56,7 +56,7 @@
     }    
 
     &.size-lg {
-      @apply min-w-[114px] px-[24px] h-[64px] text-[19px];
+      @apply min-w-[114px] px-[23px] h-[64px] text-[19px];
     }
   }
 

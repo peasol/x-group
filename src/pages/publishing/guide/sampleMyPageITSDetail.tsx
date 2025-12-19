@@ -33,8 +33,8 @@ const sampleMyPageITSDetail = () => {
 
   /* app-box 컨트롤 퍼블용 하드코딩 */
   const [boxOpened, setBoxOpened] = useState({
-    info1: true,
-    equip1: false,
+    info1: false,
+    equip1: true,
     equip2: false,
   });
 
@@ -275,15 +275,8 @@ const sampleMyPageITSDetail = () => {
                 <div className={`app-box ${boxOpened.equip1 ? "opened" : ""}`}>
                   <div className="top detail">
                     <div className="top-sub">
-                      <span className="title-sub">신청대상장비 정보등록 #1 - 평가ID : 28-000014-1-0</span>
+                      <span className="title-sub">신청대상장비 정보등록 #1</span>
                       <div>
-                        <XcButton
-                          variant="default"
-                          className="btn-app"
-                          onClick={() => setOpenDownloadModal(true)}
-                        >
-                          성적서 다운로드
-                        </XcButton>
                         <button
                           className="btn-ar"
                           aria-label="접고펼치기"
@@ -292,12 +285,42 @@ const sampleMyPageITSDetail = () => {
                       </div>
                     </div>
                     <div className="top-sub-status">
-                      <dl>
-                        <dt>진행현황</dt>  
-                        <dd>발급완료</dd>
-                        <dt>데이터 수집일정</dt>  
-                        <dd>2025-10-10</dd>
-                      </dl>
+
+                      {/* row */}
+                      <div className="row">
+                        <div className="row-item">
+                          <dl>
+                            <dt className="text-[19px]">평가ID :</dt>  
+                            <dd className="font-bold text-[19px]">YY-######-주-채널</dd>
+                            <dt className="min-w-[156px]">진행현황</dt>  
+                            <dd>수집완료</dd>
+                            <dt className="min-w-[156px]">데이터 수집일정</dt>  
+                            <dd>2025 -10 -10</dd>
+                          </dl>
+                        </div>
+                      </div>
+
+                      {/* row */}
+                      <div className="row">
+                        <div className="row-item">
+                          <dl>
+                            <dt className="text-[19px]">평가ID :</dt>  
+                            <dd className="font-bold text-[19px]">YY-######-야-채널</dd>
+                            <dt className="min-w-[156px]">진행현황</dt>  
+                            <dd>발급완료</dd>
+                            <dt className="min-w-[156px]">데이터 수집일정</dt>  
+                            <dd>2025 -10 -10</dd>
+                          </dl>
+                          <XcButton
+                            variant="default"
+                            className="btn-app"
+                            onClick={() => setOpenDownloadModal(true)}
+                          >
+                            성적서 다운로드
+                          </XcButton>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
                   <div className="cont">
@@ -344,7 +367,7 @@ const sampleMyPageITSDetail = () => {
                         </div>
                       </div>
 
-                      {/* 전후면구분 / 도로종류 / 터널명 */}
+                      {/* 전후면구분 / 도로종류 / 터널여부 */}
                       <div className="form-row">
                         <div className="cols">
                           <label htmlFor="side">전후면구분</label>
@@ -371,13 +394,25 @@ const sampleMyPageITSDetail = () => {
                         </div>
 
                         <div className="cols">
-                          <label htmlFor="tunnelName">터널명</label>
-                          <XcInput id="tunnelName" value="-" disabled />
+                          <label htmlFor="tunnelWhether">터널여부</label>
+                          <Select disabled>
+                            <SelectTrigger id="tunnelWhether">
+                              <SelectValue />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="Y">Y</SelectItem>
+                            </SelectContent>
+                          </Select>
                         </div>
                       </div>
 
-                      {/* 터널위치 / 관리기관명 / 장비ID */}
+                      {/* 터널명 / 터널위치 / 관리기관명 */}
                       <div className="form-row">
+                        <div className="cols">
+                          <label htmlFor="tunnelName">터널명</label>
+                          <XcInput id="tunnelName" value="-" disabled />
+                        </div>
+
                         <div className="cols">
                           <label htmlFor="tunnelPosition">터널위치</label>
                           <Select disabled>
@@ -399,19 +434,18 @@ const sampleMyPageITSDetail = () => {
                               "한국도로공사 서울지점",
                               "한국도로공사 부산지점"
                             ]}
-                            value="한국도로공사 천안지점"
                             disabled
                           />
                         </div>
+                      </div>
 
-                        <div className="cols">
+                      {/* 장비ID / RSE ID / 설치일자 */}
+                      <div className="form-row">
+                          <div className="cols">
                           <label htmlFor="deviceId">장비ID</label>
                           <XcInput id="deviceId" value="V-0500-0417S-I-8-H" disabled />
                         </div>
-                      </div>
-
-                      {/* RSE ID / 설치일자 / 제조사 */}
-                      <div className="form-row">
+                        
                         <div className="cols">
                           <label htmlFor="rseId">RSE ID</label>
                           <XcInput id="rseId" value="" disabled />
@@ -426,20 +460,19 @@ const sampleMyPageITSDetail = () => {
                               onChange={(d) => setStartDate(d)}
                               placeholderText="YYYY.MM.DD"
                               dateFormat="yyyy.MM.dd"
-                              value="2025.12.12"
                               disabled
                             />
                           </div>
                         </div>
+                      </div>
 
-                        <div className="cols">
+                      {/* 제조사 / 모델명 / 차로수 */}
+                      <div className="form-row">
+                          <div className="cols">
                           <label htmlFor="manufacturer">제조사</label>
                           <XcInput id="manufacturer" value="유티정보" disabled />
                         </div>
-                      </div>
 
-                      {/* 모델명 / 차로수 / 노선명 */}
-                      <div className="form-row">
                         <div className="cols">
                           <label htmlFor="modelName">모델명</label>
                           <XcInput id="modelName" value="VDS5000" disabled />
@@ -449,15 +482,15 @@ const sampleMyPageITSDetail = () => {
                           <label htmlFor="laneCount">차로수</label>
                           <XcInput id="laneCount" value="4" disabled />
                         </div>
+                      </div>
 
-                        <div className="cols">
+                      {/* 노선명 / 설치위치 */}
+                      <div className="form-row">
+                        <div className="cols cols-one-third">
                           <label htmlFor="routeName">노선명</label>
                           <XcInput id="routeName" value="서해안고속도로" disabled />
                         </div>
-                      </div>
 
-                      {/* 설치위치 */}
-                      <div className="form-row">
                         <div className="cols">
                           <label htmlFor="locationRoad">설치위치(도로명주소)</label>
                           <XcInput id="locationRoad" value="서하남대로 127" disabled />
@@ -489,7 +522,7 @@ const sampleMyPageITSDetail = () => {
                         </div>
                       </div>
 
-                      {/* 음영영역 / 평가방향 / 평가시간 */}
+                      {/* 음영영역 / 평가영역 / 평가방향 / 평가시간 */}
                       <div className="form-row">
                         <div className="cols">
                           <label htmlFor="shadowArea">음영영역(m)</label>
@@ -497,27 +530,36 @@ const sampleMyPageITSDetail = () => {
                         </div>
 
                         <div className="cols">
-                          <label htmlFor="evalDir">평가방향</label>
-                          <Select disabled>
-                            <SelectTrigger id="evalDir">
-                              <SelectValue placeholder="-" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="-">-</SelectItem>
-                            </SelectContent>
-                          </Select>
+                          <label htmlFor="evalArea">평가영역(m)</label>
+                          <XcInput id="evalArea" value="-" disabled />
                         </div>
 
-                        <div className="cols">
-                          <label htmlFor="evalTime">평가시간</label>
-                          <Select disabled>
-                            <SelectTrigger id="evalTime">
-                              <SelectValue placeholder="주간" />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="주간">주간</SelectItem>
-                            </SelectContent>
-                          </Select>
+                        <div className="cols flex-row gap-[10px]">
+
+                          <div className="flex-1">
+                            <label htmlFor="evalDir">평가방향</label>
+                            <Select disabled>
+                              <SelectTrigger id="evalDir">
+                                <SelectValue placeholder="-" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="-">-</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          </div>
+                          
+                          <div className="flex-1">
+                            <label htmlFor="evalTime">평가시간</label>
+                            <Select disabled>
+                              <SelectTrigger id="evalTime">
+                                <SelectValue placeholder="주간" />
+                              </SelectTrigger>
+                              <SelectContent>
+                                <SelectItem value="주간">주간</SelectItem>
+                              </SelectContent>
+                            </Select>
+                          </div>
+
                         </div>
                       </div>
 
@@ -530,7 +572,7 @@ const sampleMyPageITSDetail = () => {
                 <div className={`app-box ${boxOpened.equip2 ? "opened" : ""}`}>
                   <div className="top detail">
                     <div className="top-sub">
-                      <span className="title-sub">신청대상장비 정보등록 #2 - 평가ID : 28-000012-1-0</span>
+                      <span className="title-sub">신청대상장비 정보등록 #2</span>
                       <div>
                         <button
                           className="btn-ar"
@@ -540,12 +582,51 @@ const sampleMyPageITSDetail = () => {
                       </div>
                     </div>
                     <div className="top-sub-status">
-                      <dl>
-                        <dt>진행현황</dt>  
-                        <dd><span className="font-semibold text-[#EC4651]">신청반려</span></dd>
-                        <dt>데이터 수집일정</dt>  
-                        <dd>2025-10-10</dd>
-                      </dl>
+
+                       {/* row */}
+                      <div className="row">
+                        <div className="row-item">
+                          <dl>
+                            <dt className="text-[19px]">평가ID :</dt>  
+                            <dd className="min-w-[180px] font-bold text-[19px]">YY-######-주-채널</dd>
+                            <dt className="min-w-[156px]">진행현황</dt>  
+                            <dd className="font-semibold text-[#F15347]">발급반려</dd>
+                            <dt className="min-w-[156px]">데이터 수집일정</dt>  
+                            <dd>2025 -10 -10</dd>
+                          </dl>
+                        </div>
+
+                        {/* 취소/반려사유 */}
+                        <div className="flex border-t border-b border-[#cdd7e4]">
+                          <div className="flex items-center justify-center w-[140px] py-[13px] font-medium text-[15px] bg-[#f8f8f8] border-r border-[#cdd7e4]">취소/반려사유</div>
+                          <div className="flex h-full flex-1 items-center py-[15px] px-[20px] text-[13px]">
+                            수집, 분석, 심사, 발행 단계에서 작성된  취소, 반려 사유 표출
+                          </div>
+                        </div>
+
+                      </div>
+
+                      {/* row */}
+                      <div className="row">
+                        <div className="row-item">
+                          <dl>
+                            <dt className="text-[19px]">평가ID :</dt>  
+                            <dd className="min-w-[180px] font-bold text-[19px]">YY-######-야-채널</dd>
+                            <dt className="min-w-[156px]">진행현황</dt>  
+                            <dd>발급완료</dd>
+                            <dt className="min-w-[156px]">데이터 수집일정</dt>  
+                            <dd>2025 -10 -10</dd>
+                          </dl>
+                          <XcButton
+                            variant="default"
+                            className="btn-app"
+                            onClick={() => setOpenDownloadModal(true)}
+                          >
+                            성적서 다운로드
+                          </XcButton>
+                        </div>
+                      </div>
+
                     </div>
                   </div>
                   <div className="cont">

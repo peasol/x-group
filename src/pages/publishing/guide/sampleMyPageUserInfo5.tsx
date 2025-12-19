@@ -1,10 +1,8 @@
-import { useState } from "react";
 import XcBreadcrumb from "@/components/xc/ui/XcBreadcrumb";
 import LeftMenu from "@/layouts/project/leftmenu/LeftMenu";
 import { MENU_LIST } from "@/layouts/project/header/Nav";
 
 import XcButton from "@/components/xc/ui/XcButton.tsx";
-import SearchSelect from "@/components/ui/searchSelect.tsx";
 import {
   Select,
   SelectTrigger,
@@ -13,12 +11,9 @@ import {
   SelectValue,
 } from "@/components/ui/select.tsx";
 import XcInput from "@/components/xc/ui/XcInput";
-import ModalWithdrawalGuide from "@/components/its/ModalWithdrawalGuide";
 
-const sampleMyPageUserInfo2 = () => {
+const sampleMyPageUserInfo5 = () => {
   const menu = MENU_LIST.find((m) => m.label === "나의 평가현황");
-
-  const [openWithdrawal, setOpenWithdrawal] = useState(false);
 
   return (
     <>
@@ -45,16 +40,10 @@ const sampleMyPageUserInfo2 = () => {
               </h2>
             </div>
 
-            <div className="info-box type2">
-              <i className="img-rejected" />
-              <h3>승인 반려 되었습니다.</h3>
-              <p>반려사유 : 첨부서류 사업자등록증이 누락 되었습니다. 보완 하여 주세요 </p>
-            </div>
-
             <div className="application-form detail-page">
               <div className="app-box opened">
                 <div className="top">
-                  <span className="title">사용자 정보</span>
+                  <span className="title">사용자 정보 수정</span>
                 </div>
                 <div className="cont">
                   
@@ -68,16 +57,7 @@ const sampleMyPageUserInfo2 = () => {
                       </div>
                       <div className="cols">
                         <label htmlFor="orgName">소속기관명</label>
-                        <SearchSelect
-                          placeholder="관리기관명을 입력해주세요."
-                          options={[
-                            "한국도로공사 천안지점",
-                            "한국도로공사 서울지점",
-                            "한국도로공사 부산지점"
-                          ]}
-                          value="한국도로공사 천안지점"
-                          disabled
-                        />
+                        <XcInput id="orgName" value="UT" disabled />
                       </div>
                     </div>
 
@@ -89,9 +69,9 @@ const sampleMyPageUserInfo2 = () => {
                       <div className="cols">
                         <label htmlFor="emailLocal">이메일</label>
                         <div className="email">
-                          <XcInput id="emailLocal" value="aaa123" disabled />
+                          <XcInput id="emailLocal" value="aaa123" />
                           <span>@</span>
-                          <Select value="naver.com" disabled>
+                          <Select value="naver.com">
                             <SelectTrigger id="emailDomain">
                               <SelectValue placeholder="선택" />
                             </SelectTrigger>
@@ -107,16 +87,24 @@ const sampleMyPageUserInfo2 = () => {
                     </div>
 
                     <div className="form-row">
+                      {/* 연락처 */}
                       <div className="cols">
-                        <label htmlFor="phone">연락처</label>
-                        <XcInput id="phone" value="010-1234-5678" disabled />
+                        <label>연락처</label>
+                        <div className="phone-wrap">
+                          <XcInput onlyNumber maxLength={3} />
+                          <span className="bar">-</span>
+                          <XcInput onlyNumber maxLength={4} />
+                          <span className="bar">-</span>
+                          <XcInput onlyNumber maxLength={4} />
+                        </div>
                       </div>
+
+                      {/* 사용자 ID */}
                       <div className="cols">
                         <label htmlFor="userID">사용자 ID</label>
                         <XcInput id="userID" value="gogo123" disabled />
                       </div>
                     </div>
-
                   </div>
 
                   {/* 첨부파일 */}
@@ -142,25 +130,19 @@ const sampleMyPageUserInfo2 = () => {
             </div>
 
             <div className="btn-wrap justify-between">
-              <XcButton variant="outline" size="lg" className="min-w-[81px]" onClick={() => setOpenWithdrawal(true)}>
-                회원탈퇴
+              <XcButton variant="outline" size="lg" className="min-w-[81px]">
+                취소하기
               </XcButton>
               <XcButton variant="default" size="lg" className="min-w-[81px]">
-                수정하기
+                저장하기
               </XcButton>
             </div>
 
           </div>
         </div>
       </div>
-
-      {/* 회원 탈퇴 안내 팝업 */}
-      <ModalWithdrawalGuide
-        open={openWithdrawal}
-        onOpenChange={setOpenWithdrawal}
-      />      
     </>
   );
 };
 
-export default sampleMyPageUserInfo2;
+export default sampleMyPageUserInfo5;

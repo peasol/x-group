@@ -61,6 +61,7 @@ export const XcInput = forwardRef<HTMLInputElement, IXcInputProps>(function XcIn
   });
 
   const isFile = inputType === "file";
+  const isControlled = value !== undefined;
 
   const numberFilter = (val: string) => val.replace(/[^0-9]/g, "");
 
@@ -112,7 +113,7 @@ export const XcInput = forwardRef<HTMLInputElement, IXcInputProps>(function XcIn
         style={{ width, height }}
         disabled={disabled}
         readOnly={readOnly}
-        {...(isFile ? {} : { value: value ?? "", defaultValue })}
+        {...(isFile ? {} : isControlled ? { value } : { defaultValue })}
         onFocus={(e) => {
           handleFocus();
           onFocus?.(e);

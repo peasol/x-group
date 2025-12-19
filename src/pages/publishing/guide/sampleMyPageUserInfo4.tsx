@@ -4,7 +4,6 @@ import LeftMenu from "@/layouts/project/leftmenu/LeftMenu";
 import { MENU_LIST } from "@/layouts/project/header/Nav";
 
 import XcButton from "@/components/xc/ui/XcButton.tsx";
-import SearchSelect from "@/components/ui/searchSelect.tsx";
 import {
   Select,
   SelectTrigger,
@@ -15,7 +14,7 @@ import {
 import XcInput from "@/components/xc/ui/XcInput";
 import ModalWithdrawalGuide from "@/components/its/ModalWithdrawalGuide";
 
-const sampleMyPageUserInfo2 = () => {
+const sampleMyPageUserInfo4 = () => {
   const menu = MENU_LIST.find((m) => m.label === "나의 평가현황");
 
   const [openWithdrawal, setOpenWithdrawal] = useState(false);
@@ -45,16 +44,10 @@ const sampleMyPageUserInfo2 = () => {
               </h2>
             </div>
 
-            <div className="info-box type2">
-              <i className="img-rejected" />
-              <h3>승인 반려 되었습니다.</h3>
-              <p>반려사유 : 첨부서류 사업자등록증이 누락 되었습니다. 보완 하여 주세요 </p>
-            </div>
-
             <div className="application-form detail-page">
               <div className="app-box opened">
                 <div className="top">
-                  <span className="title">사용자 정보</span>
+                  <span className="title">사용자 정보 수정</span>
                 </div>
                 <div className="cont">
                   
@@ -68,16 +61,7 @@ const sampleMyPageUserInfo2 = () => {
                       </div>
                       <div className="cols">
                         <label htmlFor="orgName">소속기관명</label>
-                        <SearchSelect
-                          placeholder="관리기관명을 입력해주세요."
-                          options={[
-                            "한국도로공사 천안지점",
-                            "한국도로공사 서울지점",
-                            "한국도로공사 부산지점"
-                          ]}
-                          value="한국도로공사 천안지점"
-                          disabled
-                        />
+                        <XcInput id="orgName" value="UT" disabled />
                       </div>
                     </div>
 
@@ -107,16 +91,18 @@ const sampleMyPageUserInfo2 = () => {
                     </div>
 
                     <div className="form-row">
+                      {/* 연락처 */}
                       <div className="cols">
-                        <label htmlFor="phone">연락처</label>
+                        <label>연락처</label>
                         <XcInput id="phone" value="010-1234-5678" disabled />
                       </div>
+
+                      {/* 사용자 ID */}
                       <div className="cols">
                         <label htmlFor="userID">사용자 ID</label>
                         <XcInput id="userID" value="gogo123" disabled />
                       </div>
                     </div>
-
                   </div>
 
                   {/* 첨부파일 */}
@@ -125,6 +111,11 @@ const sampleMyPageUserInfo2 = () => {
                     <ul>
                       <li>
                         <p>사업자등록증_사본 [pdf, 1.2MB]</p>
+                        <div>
+                          <button className="btns">
+                            <span>다운로드</span><i className="ic-download"/>
+                          </button>
+                        </div>
                       </li>
                     </ul>
                   </div>
@@ -133,6 +124,11 @@ const sampleMyPageUserInfo2 = () => {
                     <ul>
                       <li>
                         <p>재직증명서_사본 [pdf, 1.2MB]</p>
+                        <div>
+                          <button className="btns">
+                            <span>다운로드</span><i className="ic-download"/>
+                          </button>
+                        </div>
                       </li>
                     </ul>
                   </div>
@@ -158,9 +154,9 @@ const sampleMyPageUserInfo2 = () => {
       <ModalWithdrawalGuide
         open={openWithdrawal}
         onOpenChange={setOpenWithdrawal}
-      />      
+      />
     </>
   );
 };
 
-export default sampleMyPageUserInfo2;
+export default sampleMyPageUserInfo4;

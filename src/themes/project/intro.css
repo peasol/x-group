@@ -1,0 +1,182 @@
+@layer components {
+
+  /* intro-wrap */
+  .intro-wrap {
+
+    /* intro-main : 평가제도소개 */
+    .intro-main {
+      .cont {
+        @apply px-[84px] pt-[34px];
+        h3 {
+          @apply mt-[30px] mb-[12px] flex items-center gap-[8px];
+          i {
+            @apply w-[20px] h-[20px];
+            background: url('@/assets/images/common/ic_ins.svg') no-repeat center;
+          }
+          span {
+            @apply font-bold text-[17px] text-[#1D1D1D];
+          }
+        }
+        p {
+          @apply relative pl-[14px] leading-[1.8]
+          before:content-[''] before:absolute before:top-[13px] before:left-[0] before:w-[4px] before:h-[4px] before:bg-[#555] before:rounded-full;
+          span {
+            @apply block text-[#555];
+          }
+          strong {
+            @apply font-semibold text-[#555];
+          }
+        }
+        ul {
+          li {
+            @apply pl-[12px] py-[1px] text-[17px] text-[#555];
+          }
+        }
+      }
+    }
+    
+    /*  -block */
+    .ins-block {
+      @apply mb-[40px] min-h-[64px] py-[19px] px-[24px] text-[17px] text-[#1D1D1D] rounded-[8px] bg-[#EDF1F5];
+    }
+
+    /* intro-block */
+    .intro-block {
+      @apply flex items-start gap-[80px];
+
+      /* leftarea */
+      .leftarea {
+        @apply sticky top-[210px] w-[296px];
+
+        .top {
+          @apply flex flex-col gap-[6px] mb-[34px] leading-[1.2];
+          .title {
+            @apply font-bold text-[25px] text-[#1D1D1D];
+          }
+          small {
+            @apply text-[15px];
+          }
+        }
+
+        > ul {
+          @apply mb-[40px];
+          > li {
+            > a {
+              @apply relative flex items-center h-[40px] pt-[2px] px-[22px] text-[#555] text-[17px] border-l-[2px] border-[#CDD7E4] hover:bg-[#EDF1F5];
+            }
+            &.active > a {
+              @apply px-[20px] font-bold text-[#003675] bg-[#EDF1F5] border-l-[4px] border-[#003675];
+            }
+          }
+        }
+
+        .btns {
+          @apply flex items-center justify-center mb-[40px] w-full h-[64px] text-[19px] text-white bg-[#1D56BC] rounded-[8px]
+          hover:bg-[#164aa6];
+        }
+      }
+
+      /* intro-cont */
+      .intro-cont {
+        @apply flex-1 w-[calc(100%_-_376px)];
+
+        .cont-box {
+          @apply py-[30px] px-[39px] border border-[#C6C6C6] rounded-[12px];
+          & + .cont-box {
+            @apply mt-[64px];
+          }
+          > h3 {
+            @apply mb-[28px] font-bold text-[25px] text-[#1D1D1D];
+          }
+          h4.blt-title {
+            @apply mb-[14px] flex items-center gap-[8px];
+            i {
+              @apply w-[20px] h-[20px];
+              background: url('@/assets/images/common/ic_ins.svg') no-repeat center;
+            }
+            span {
+              @apply font-bold text-[17px] text-[#1D1D1D];
+            }
+            & + .item-list {
+              @apply mt-[24px];
+            }
+          }
+          p.t1 {
+            @apply mb-[3px] mx-[12px] text-[17px] text-[#555];
+            & + .item-list {
+              @apply mt-[17px];
+            }
+            & + h4.blt-title {
+              @apply mt-[30px];
+            }
+          }
+          p.t2 {
+            @apply relative pl-[10px] mb-[3px] text-[17px] text-[#555]
+            before:content-[''] before:absolute before:top-[10px] before:left-[0] before:w-[4px] before:h-[4px] before:bg-[#555] before:rounded-full;
+             & + h4.blt-title {
+              @apply mt-[30px];
+            }
+          }
+          p.t3 {
+            @apply mb-[3px] mx-[12px] text-[17px] text-[#2768FF];
+            & + .item-list, 
+            & + h4.blt-title {
+              @apply mt-[30px];
+            }
+          }
+          p.t4 {
+            @apply mt-[19px] mb-[12px] mx-[8px] text-[15px] text-[#99B0CB];
+          }
+
+          ul.item-list {
+            @apply flex flex-wrap gap-[12px] my-[10px];
+            li {
+              @apply flex flex-col gap-[7px] justify-center p-[23px] pt-[18px] w-[197px] border border-[#C6C6C6] rounded-[12px];
+              p {
+                @apply font-bold text-[13px] text-[#1D1D1D] text-center;
+              }
+              .img-area {
+                @apply w-[149px] h-[119px] overflow-hidden;
+              }
+              img {
+                @apply w-full h-full object-cover;
+              }
+            }
+            & + h4.blt-title {
+              @apply mt-[38px];
+            }
+          }
+          .document-area {
+            @apply p-[24px] bg-[#F8F8F8] rounded-[8px];
+            img {
+              @apply m-auto;
+            }
+          }
+
+          .ins-box {
+            @apply my-[26px] px-[40px] py-[33px] text-[17px] text-[#1D1D1D] bg-[#F8F8F8] rounded-[12px];
+          }
+        }
+
+        .table-detail {
+          @apply mt-[12px] mb-[9px];
+          table {
+            thead tr {
+              th {
+                @apply pt-[3px] pb-[2px];
+              }
+              th.th-sub  {
+                @apply !font-normal text-[13px] bg-[#F8F8F8];
+              }
+            }
+            tbody td {
+              @apply h-[56px];
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+}

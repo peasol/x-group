@@ -363,4 +363,38 @@
       }
     }
   }
+
+  /* withdrawal */
+  .withdrawal-wrap {
+    @apply w-[920px];
+
+    .withdrawal-box {
+      @apply py-[16px] px-[23px] border border-[#C6C6C6] rounded-[12px];
+      .title {
+        @apply mb-[4px] font-semibold text-[17px] text-[#1D1D1D];
+      }
+      p {
+        @apply relative mb-[2px] pl-[16px] text-[17px] text-[#555]
+        before:content-[''] before:absolute before:top-[11px] before:left-[6px] before:w-[3px] before:h-[3px] before:bg-[#555] before:rounded-full;
+      }
+      p + .title {
+        @apply mt-[18px];
+      }
+    }
+
+    .withdrawal-foot {
+      @apply flex items-center justify-between mt-[26px];
+      p {
+        @apply relative pl-[22px] text-[18px] text-[#000B17]
+        before:content-[''] before:absolute before:top-[11px] before:left-[8px] before:w-[4px] before:h-[4px] before:bg-[#000B17] before:rounded-full;
+      }
+      .xc-button {
+        @apply w-[120px] h-[40px] text-[14px] rounded-[6px];
+        box-shadow: none !important;
+        &:focus { 
+          border: 1px solid #000 !important;
+        }
+      }
+    }
+  }
 }

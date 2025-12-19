@@ -277,7 +277,7 @@ const sampleMyPageHiPassList = () => {
                   <col style={{ width: "13%" }} />
                   <col style={{ width: "14%" }} />
                   <col />
-                  <col style={{ width: "11%" }} />
+                  <col style={{ width: "13%" }} />
                   <col style={{ width: "17%" }} />
                   <col style={{ width: "15%" }} />
                 </colgroup>
@@ -291,7 +291,7 @@ const sampleMyPageHiPassList = () => {
                     <TableHead>신청일자</TableHead>
                     <TableHead>적합평가 구분</TableHead>
                     <TableHead>접수번호</TableHead>
-                    <TableHead>통신방식</TableHead>
+                    <TableHead>단말기 통신방식</TableHead>
                     <TableHead>시험종류</TableHead>
                     <TableHead>시험진행 현황</TableHead>
                   </TableRow>

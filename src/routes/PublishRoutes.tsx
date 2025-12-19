@@ -6,6 +6,8 @@ import UiForms from "@/pages/publishing/guide/uiForms.tsx";
 import UiDialog from "@/pages/publishing/guide/uiDialog.tsx";
 
 import SampleMain from "@/pages/publishing/guide/sampleMain.tsx";
+import SampleIntroSystem from "@/pages/publishing/guide/sampleIntroSystem.tsx";
+
 import SampleLogin from "@/pages/publishing/guide/sampleLogin.tsx";
 import SampleJoinCert from "@/pages/publishing/guide/sampleJoinCert.tsx";
 import SampleJoinAgreement from "@/pages/publishing/guide/sampleJoinAgreement.tsx";
@@ -15,12 +17,21 @@ import SampleNotice from "@/pages/publishing/guide/sampleNotice.tsx";
 import SampleNoticeDetail from "@/pages/publishing/guide/sampleNoticeDetail.tsx";
 import SampleFaq from "@/pages/publishing/guide/sampleFaq.tsx";
 
+import SampleITSIntro from "@/pages/publishing/guide/sampleITSIntro.tsx";
 import SampleITSApplication from "@/pages/publishing/guide/sampleITSApplication.tsx";
+import SampleHiPassIntro from "@/pages/publishing/guide/sampleHiPassIntro.tsx";
 import SampleHiPassApplication from "@/pages/publishing/guide/sampleHiPassApplication.tsx";
 
-import SampleMyPageUserInfo from "@/pages/publishing/guide/sampleMyPageUserInfo.tsx";
+import SampleMyPageUserInfo1 from "@/pages/publishing/guide/sampleMyPageUserInfo1.tsx";
 import SampleMyPageUserInfo2 from "@/pages/publishing/guide/sampleMyPageUserInfo2.tsx";
 import SampleMyPageUserInfo3 from "@/pages/publishing/guide/sampleMyPageUserInfo3.tsx";
+import SampleMyPageUserInfo4 from "@/pages/publishing/guide/sampleMyPageUserInfo4.tsx";
+import SampleMyPageUserInfo5 from "@/pages/publishing/guide/sampleMyPageUserInfo5.tsx";
+import SampleMyPageUserInfo6 from "@/pages/publishing/guide/sampleMyPageUserInfo6.tsx";
+import SampleMyPageUserInfo7 from "@/pages/publishing/guide/sampleMyPageUserInfo7.tsx";
+import SampleMyPageUserInfo8 from "@/pages/publishing/guide/sampleMyPageUserInfo8.tsx";
+import SampleWithdrawal from "@/pages/publishing/guide/sampleWithdrawal.tsx";
+
 import SampleMyPageITSList from "@/pages/publishing/guide/sampleMyPageITSList.tsx";
 import SampleMyPageITSDetail from "@/pages/publishing/guide/sampleMyPageITSDetail.tsx";
 import SampleMyPageHiPassList from "@/pages/publishing/guide/sampleMyPageHiPassList.tsx";
@@ -58,7 +69,11 @@ const PublishRoutes:any = [
     {
       path: '/publishing/guide/sampleMain',
       element: <SampleMain />
-    },    
+    },   
+    {
+      path: '/publishing/guide/sampleIntroSystem',
+      element: <SampleIntroSystem />
+    }, 
 
     {
       path: '/publishing/guide/sampleLogin',
@@ -91,8 +106,16 @@ const PublishRoutes:any = [
     },
 
     {
+      path: '/publishing/guide/sampleITSIntro',
+      element: <SampleITSIntro />
+    },
+    {
       path: '/publishing/guide/sampleITSApplication',
       element: <SampleITSApplication />
+    },
+    {
+      path: '/publishing/guide/sampleHiPassIntro',
+      element: <SampleHiPassIntro />
     },
     {
       path: '/publishing/guide/sampleHiPassApplication',
@@ -100,8 +123,8 @@ const PublishRoutes:any = [
     },
     
     {
-      path: '/publishing/guide/sampleMyPageUserInfo',
-      element: <SampleMyPageUserInfo />
+      path: '/publishing/guide/sampleMyPageUserInfo1',
+      element: <SampleMyPageUserInfo1 />
     },
     {
       path: '/publishing/guide/sampleMyPageUserInfo2',
@@ -111,6 +134,31 @@ const PublishRoutes:any = [
       path: '/publishing/guide/sampleMyPageUserInfo3',
       element: <SampleMyPageUserInfo3 />
     },
+    {
+      path: '/publishing/guide/sampleMyPageUserInfo4',
+      element: <SampleMyPageUserInfo4 />
+    },
+    {
+      path: '/publishing/guide/sampleMyPageUserInfo5',
+      element: <SampleMyPageUserInfo5 />
+    },
+    {
+      path: '/publishing/guide/sampleMyPageUserInfo6',
+      element: <SampleMyPageUserInfo6 />
+    },
+    {
+      path: '/publishing/guide/sampleMyPageUserInfo7',
+      element: <SampleMyPageUserInfo7 />
+    },
+    {
+      path: '/publishing/guide/sampleMyPageUserInfo8',
+      element: <SampleMyPageUserInfo8 />
+    },
+    {
+      path: '/publishing/guide/sampleWithdrawal',
+      element: <SampleWithdrawal />
+    },
+
     {
       path: '/publishing/guide/sampleMyPageITSList',
       element: <SampleMyPageITSList />

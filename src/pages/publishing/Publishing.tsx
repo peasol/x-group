@@ -40,6 +40,11 @@ function Publishing() {
               <span>sampleMain</span><span>메인화면</span>
             </a>
           </li>
+          <li>
+            <a href="/publishing/guide/sampleIntroSystem" target="_blank" className="inline-flex items-center gap-[5px] hover:text-[#313daa]">
+              <span>sampleIntroSystem</span><span>평가제도소개</span>
+            </a>
+          </li>
 
           <li>
             <a href="/publishing/guide/sampleLogin" target="_blank" className="mt-[20px] inline-flex items-center gap-[5px] hover:text-[#313daa]">
@@ -79,8 +84,18 @@ function Publishing() {
           </li>
 
           <li>
-            <a href="/publishing/guide/sampleITSApplication" target="_blank" className="mt-[20px] inline-flex items-center gap-[5px] hover:text-[#313daa]">
+            <a href="/publishing/guide/sampleITSIntro" target="_blank" className="mt-[20px] inline-flex items-center gap-[5px] hover:text-[#313daa]">
+              <span>sampleITSIntro</span><span>ITS성능평가 안내/신청_ITS성능평가 안내</span>
+            </a>
+          </li>
+          <li>
+            <a href="/publishing/guide/sampleITSApplication" target="_blank" className="inline-flex items-center gap-[5px] hover:text-[#313daa]">
               <span>sampleITSApplication</span><span>ITS성능평가 신청 (첨부파일 등록 컴포넌트)</span>
+            </a>
+          </li>
+          <li>
+            <a href="/publishing/guide/sampleHiPassIntro" target="_blank" className="inline-flex items-center gap-[5px] hover:text-[#313daa]">
+              <span>sampleHiPassIntro</span><span>하이패스 적합등록 신청_하이패스 적합등록 안내</span>
             </a>
           </li>
           <li>
@@ -90,22 +105,53 @@ function Publishing() {
           </li>
 
           <li>
-            <a href="/publishing/guide/sampleMyPageUserInfo" target="_blank" className="mt-[20px] inline-flex items-center gap-[5px] hover:text-[#313daa]">
-              <span>sampleMyPageUserInfo</span><span>나의 평가현황_사용자정보 관리 - 승인중</span>
+            <a href="/publishing/guide/sampleMyPageUserInfo1" target="_blank" className="mt-[20px] inline-flex items-center gap-[5px] hover:text-[#313daa]">
+              <span>sampleMyPageUserInfo1</span><span>나의 평가현황_사용자정보 관리 - 대기</span>
             </a>
           </li>
           <li>
             <a href="/publishing/guide/sampleMyPageUserInfo2" target="_blank" className="inline-flex items-center gap-[5px] hover:text-[#313daa]">
-              <span>sampleMyPageUserInfo2</span><span>나의 평가현황_사용자정보 관리 - 승인 반려 및 사용자 정보</span>
+              <span>sampleMyPageUserInfo2</span><span>나의 평가현황_사용자정보 관리 - 개인회원 반려</span>
             </a>
           </li>
           <li>
             <a href="/publishing/guide/sampleMyPageUserInfo3" target="_blank" className="inline-flex items-center gap-[5px] hover:text-[#313daa]">
-              <span>sampleMyPageUserInfo3</span><span>나의 평가현황_사용자정보 관리 - 사용자 정보 수정</span>
+              <span>sampleMyPageUserInfo3</span><span>나의 평가현황_사용자정보 관리 - 개인회원 반려 수정</span>
             </a>
           </li>
           <li>
-            <a href="/publishing/guide/sampleMyPageITSList" target="_blank" className="inline-flex items-center gap-[5px] hover:text-[#313daa]">
+            <a href="/publishing/guide/sampleMyPageUserInfo4" target="_blank" className="inline-flex items-center gap-[5px] hover:text-[#313daa]">
+              <span>sampleMyPageUserInfo4</span><span>나의 평가현황_사용자정보 관리 - 개인회원 승인</span>
+            </a>
+          </li>
+          <li>
+            <a href="/publishing/guide/sampleMyPageUserInfo5" target="_blank" className="inline-flex items-center gap-[5px] hover:text-[#313daa]">
+              <span>sampleMyPageUserInfo5</span><span>나의 평가현황_사용자정보 관리 - 개인회원 승인 후 수정</span>
+            </a>
+          </li>
+          <li>
+            <a href="/publishing/guide/sampleMyPageUserInfo6" target="_blank" className="inline-flex items-center gap-[5px] hover:text-[#313daa]">
+              <span>sampleMyPageUserInfo6</span><span>나의 평가현황_사용자정보 관리 - 법인회원 반려</span>
+            </a>
+          </li>
+          <li>
+            <a href="/publishing/guide/sampleMyPageUserInfo7" target="_blank" className="inline-flex items-center gap-[5px] hover:text-[#313daa]">
+              <span>sampleMyPageUserInfo7</span><span>나의 평가현황_사용자정보 관리 - 법인회원 반려 수정</span>
+            </a>
+          </li>
+          <li>
+            <a href="/publishing/guide/sampleMyPageUserInfo8" target="_blank" className="inline-flex items-center gap-[5px] hover:text-[#313daa]">
+              <span>sampleMyPageUserInfo8</span><span>나의 평가현황_사용자정보 관리 - 법인회원 승인 후 수정</span>
+            </a>
+          </li>
+          <li>
+            <a href="/publishing/guide/sampleWithdrawal" target="_blank" className="inline-flex items-center gap-[5px] hover:text-[#313daa]">
+              <span>sampleWithdrawal</span><span>회원 탈퇴 안내</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="/publishing/guide/sampleMyPageITSList" target="_blank" className="mt-[20px] inline-flex items-center gap-[5px] hover:text-[#313daa]">
               <span>sampleMyPageITSList</span><span>나의 평가현황_ITS성능평가 신청내역 목록</span>
             </a>
           </li>

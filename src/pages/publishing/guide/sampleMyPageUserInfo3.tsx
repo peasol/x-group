@@ -54,7 +54,7 @@ const sampleMyPageUserInfo3 = () => {
                     <div className="form-row">
                       <div className="cols">
                         <label htmlFor="orgPart">사용자 (소속) 구분</label>
-                        <XcInput id="orgPart" value="개인" />
+                        <XcInput id="orgPart" value="개인" disabled />
                       </div>
                       <div className="cols">
                         <label htmlFor="orgName">소속기관명</label>
@@ -72,7 +72,7 @@ const sampleMyPageUserInfo3 = () => {
                     <div className="form-row">
                       <div className="cols">
                         <label htmlFor="userName">사용자 명</label>
-                        <XcInput id="userName" value="김도로" />
+                        <XcInput id="userName" value="김도로" disabled />
                       </div>
                       <div className="cols">
                         <label htmlFor="emailLocal">이메일</label>
@@ -95,18 +95,6 @@ const sampleMyPageUserInfo3 = () => {
                     </div>
 
                     <div className="form-row">
-                      <div className="cols">
-                        <label htmlFor="phone">연락처</label>
-                        <XcInput id="phone" value="010-1234-5678" />
-                      </div>
-                      <div className="cols">
-                        <label htmlFor="userID">사용자 ID</label>
-                        <XcInput id="userID" value="gogo123" />
-                      </div>
-                    </div>
-
-                    
-                    <div className="form-row">
                       {/* 연락처 */}
                       <div className="cols">
                         <label>연락처</label>
@@ -119,37 +107,10 @@ const sampleMyPageUserInfo3 = () => {
                         </div>
                       </div>
 
-                      {/* 사업자등록번호 3칸 */}
+                      {/* 사용자 ID */}
                       <div className="cols">
-                        <label>사업자등록번호</label>
-                        <div className="biznum-wrap">
-                          <XcInput onlyNumber maxLength={3} />
-                          <span className="bar">-</span>
-                          <XcInput onlyNumber maxLength={2} />
-                          <span className="bar">-</span>
-                          <XcInput onlyNumber maxLength={5} />
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="form-row">
-                      {/* 법인번호 2칸 */}
-                      <div className="cols">
-                        <label>법인번호</label>
-                        <div className="corpnum-wrap">
-                          <XcInput onlyNumber maxLength={6} />
-                          <span className="bar">-</span>
-                          <XcInput onlyNumber maxLength={7} />
-                        </div>
-                      </div>
-
-                      {/* 소속기관명 */}
-                      <div className="cols">
-                        <label>소속기관명</label>
-                        <div className="flex items-center gap-[8px]">
-                          <XcInput placeholder="소속기관명을 입력해주세요." />
-                          <XcButton variant="secondary" className="min-w-[85px]">중복확인</XcButton>
-                        </div>
+                        <label htmlFor="userID">사용자 ID</label>
+                        <XcInput id="userID" value="gogo123" />
                       </div>
                     </div>
                   </div>

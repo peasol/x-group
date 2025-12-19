@@ -21,33 +21,21 @@ export const MENU_LIST: MenuItem[] = [
     label: "평가제도소개",
     path: "/",
     depth2: [
-      { label: "2depth", path: "/" },
-      { label: "2depth", path: "/" },
-      { label: "2depth", path: "/" },
-      { label: "2depth", path: "/" },
-      { label: "2depth", path: "/" }
+      { label: "평가제도소개", path: "/" },
     ]
   },
   {
     label: "ITS성능평가 안내/신청",
     path: "/",
     depth2: [
-      { label: "성능평가 대상", path: "/" },
-      { label: "성능평가 절차", path: "/" },
-      { label: "품질방침", path: "/" },
-      { label: "공평성보장 선언문", path: "/" },
-      { label: "평가신청", path: "/" }
+      { label: "ITS성능평가 안내/신청", path: "/" },
     ]
   },
   {
     label: "하이패스 적합등록 안내/신청",
     path: "/",
     depth2: [
-      { label: "2depth", path: "/" },
-      { label: "2depth", path: "/" },
-      { label: "2depth", path: "/" },
-      { label: "2depth", path: "/" },
-      { label: "2depth", path: "/" }
+      { label: "하이패스 적합등록 안내/신청", path: "/" },
     ]
   },
   {

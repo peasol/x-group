@@ -1,9 +1,10 @@
-@import './table.css';
 @import './style.css';
 
 @import './header.css';
 @import './footer.css';
 
+@import './table.css';
 @import './join.css';
 @import './main.css';
 @import './app-form.css';
+@import './intro.css';
